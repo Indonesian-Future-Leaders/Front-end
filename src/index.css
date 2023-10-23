@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .navbar {
+    @apply block w-full shadow-md bg-primary-3 text-light-1 sticky top-0 z-20 py-4;
+  }
+  .navbar_child {
+    @apply flex items-center justify-between px-4 md:px-8 lg:px-12 w-full relative;
+  }
+  .navbar_field {
+    @apply bg-primary-3 flex flex-col sm:flex-row justify-center items-center gap-8 absolute sm:static z-10 top-0 w-full sm:w-auto transition-all duration-300 ease-in h-screen sm:h-auto;
+  }
+  .social_icon {
+    @apply text-light-1 p-2 rounded-full border-2 border-light-1 hover:text-primary-3 hover:bg-light-1 duration-300;
+  }
+  .filter_custom_black {
+    @apply !from-[#00000070] from-0% to-50%;
+  }
+}
