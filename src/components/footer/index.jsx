@@ -1,7 +1,7 @@
-import { Envelope, InstagramLogo, LinkedinLogo, Phone, TwitterLogo } from "@phosphor-icons/react";
+import { Envelope, Phone } from "@phosphor-icons/react";
 import Container from "../container";
 import Image from "../image";
-import { logo_ifl } from "../../assets";
+import { instagram, linkedin, logo_ifl, twitter } from "../../assets";
 
 const Footer = () => {
   return (
@@ -18,18 +18,18 @@ const Footer = () => {
               <h6 className="font-medium text-sm sm:text-base">+62 813 3410 5663</h6>
             </span>
           </div>
-          <a href="/" className="md:pl-8">
-            <Image src={logo_ifl} className="!w-32 h-16" />
+          <a href="/" className="flex items-center md:pl-8">
+            <Image src={logo_ifl} className="!w-28 h-12 sm:!w-32 sm:h-14" />
           </a>
           <div className="flex gap-4 items-center">
             <a href="#" className="social_icon">
-              <InstagramLogo size={24} weight="bold" />
+              <Image src={instagram} className="!w-4 h-4 sm:h-6 sm:!w-6" />
             </a>
             <a href="#" className="social_icon">
-              <LinkedinLogo size={24} weight="bold" />
+              <Image src={linkedin} className="!w-4 h-4 sm:h-6 sm:!w-6" />
             </a>
             <a href="#" className="social_icon">
-              <TwitterLogo size={24} weight="bold" />
+              <Image src={twitter} className="!w-4 h-4 sm:h-6 sm:!w-6" />
             </a>
           </div>
         </div>

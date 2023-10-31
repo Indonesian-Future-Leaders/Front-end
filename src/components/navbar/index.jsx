@@ -34,12 +34,12 @@ const Navbar = () => {
             </Button>
             <div className="dropdown_content">
               <Link to="/program">
-                <Button intent="outline" size="small" className="!w-full !rounded !px-4">
+                <Button intent="outline" size="small" className="!w-full !rounded !px-6">
                   Program
                 </Button>
               </Link>
               <Link to="/project">
-                <Button intent="outline" size="small" className="!w-full !rounded !px-4">
+                <Button intent="outline" size="small" className="!w-full !rounded !px-6">
                   Project
                 </Button>
               </Link>

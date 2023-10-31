@@ -25,6 +25,6 @@
     @apply absolute right-0 top-1/2 -translate-y-1/2 bg-gradient-to-l from-white from-65% to-transparent w-12 h-full flex items-center justify-end;
   }
   .dropdown_content {
-    @apply hidden absolute rounded-md top-10 p-4 -left-6 sm:left-0 bg-light-1 text-primary-1 flex-col gap-2 group-hover:flex z-1;
+    @apply hidden absolute rounded-md top-10 p-4 left-1/2 -translate-x-1/2 bg-light-1 text-primary-1 flex-col gap-2 group-hover:flex z-1;
   }
 }

@@ -16,8 +16,8 @@ const button = cva("button", {
     },
     size: {
       small: "text-sm py-1 px-2",
-      medium: "text-sm py-2 md:text-base px-4",
-      large: "text-xl py-2 px-6 md:text-2xl md:py-4 md:px-8",
+      medium: "text-xs sm:text-sm py-2 md:text-base px-4",
+      large: "text-lg sm:text-xl py-2 px-6 md:text-2xl md:py-4 md:px-8",
     },
   },
   defaultVariants: {

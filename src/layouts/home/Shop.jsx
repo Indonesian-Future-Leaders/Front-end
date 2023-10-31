@@ -1,9 +1,14 @@
-import { InstagramLogo, ShoppingBag, Storefront } from "@phosphor-icons/react";
-import { shop } from "../../assets";
+import { instagram, shop, shopee, tokopedia } from "../../assets";
 import { Button } from "../../components/button";
 import Container from "../../components/container";
 import Filter from "../../components/filter";
 import Image from "../../components/image";
+
+const iconsList = [
+  { title: "Instagram", icon: instagram },
+  { title: "Shopee", icon: shopee },
+  { title: "Tokopedia", icon: tokopedia },
+];
 
 const Shop = () => {
   return (
@@ -18,18 +23,16 @@ const Shop = () => {
             sapiente quas totam nihil ex voluptatibus labore odit vitae
           </p>
           <div className="flex gap-4 flex-wrap">
-            <Button intent="secondary" className="flex items-center gap-2 bg-primary-1">
-              <InstagramLogo size={24} />
-              Instagram
-            </Button>
-            <Button intent="secondary" className="flex items-center gap-2 bg-primary-1">
-              <ShoppingBag size={24} />
-              Shopee
-            </Button>
-            <Button intent="secondary" className="flex items-center gap-2 bg-primary-1">
-              <Storefront size={24} />
-              Tokopedia
-            </Button>
+            {iconsList.map((item, index) => (
+              <Button
+                key={index}
+                intent="secondary"
+                className="flex items-center gap-1 sm:gap-2 bg-primary-1"
+              >
+                <Image src={item.icon} className="!w-4 h-4 sm:h-6 sm:!w-6" />
+                {item.title}
+              </Button>
+            ))}
           </div>
         </div>
       </Container>
