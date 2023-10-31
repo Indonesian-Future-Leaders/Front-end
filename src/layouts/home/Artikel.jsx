@@ -10,7 +10,7 @@ const Artikel = () => {
       <Image src={artikel} className="min-h-500 md:min-h-700 relative !bg-center">
         <Filter intent="secondary" />
       </Image>
-      <div className="bg-primary-3 py-4 text-dark-1">
+      <div className="bg-primary-1 py-4 text-dark-1">
         <Container className="flex flex-col md:flex-row gap-8">
           <Image
             src={content}

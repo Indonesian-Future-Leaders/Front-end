@@ -1,7 +1,7 @@
 import React from "react";
 import { ctg_1, ctg_2 } from "../../assets";
 import Container from "../../components/container";
-import Tab from "../../components/tab/Tab";
+import Tab from "../../components/tab";
 import Image from "../../components/image";
 
 const projectList = [
@@ -30,17 +30,9 @@ const projectList = [
 const FieldProject = () => {
   const [currentTab, setCurrentTab] = React.useState(0);
 
-  const itemsPerTab = 1;
+  const lastIndex = currentTab + 1;
 
-  const onTabChange = (tab) => {
-    setCurrentTab(tab);
-  };
-
-  const startIndex = currentTab * itemsPerTab;
-
-  const endIndex = startIndex + itemsPerTab;
-
-  const itemsToDisplay = projectList.slice(startIndex, endIndex);
+  const itemsToDisplay = projectList.slice(currentTab, lastIndex);
 
   return (
     <Container className="!my-4 text-center !mb-16">
@@ -48,7 +40,7 @@ const FieldProject = () => {
         type="underline"
         currentTab={currentTab}
         totalTabs={projectList}
-        onTabChange={onTabChange}
+        onTabChange={(tab) => setCurrentTab(tab)}
       />
       <div className="mt-12 overflow-hidden">
         {itemsToDisplay.map((item, index) => (

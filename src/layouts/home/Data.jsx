@@ -22,9 +22,9 @@ const dataList = [
 
 const Data = () => {
   return (
-    <Container className="flex flex-col md:flex-row gap-16 text-dark-1">
+    <Container className="flex flex-col md:flex-row gap-8 md:gap-16 text-dark-1">
       <div className="flex gap-4 md:gap-8 flex-col flex-1">
-        <h1 className="font-bold text-2xl sm:text-4xl text-primary-3">
+        <h1 className="font-bold text-2xl sm:text-4xl text-primary-1">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, ea?
         </h1>
         <p className="font-normal text-base md:text-lg">
@@ -39,9 +39,9 @@ const Data = () => {
       <div className="flex gap-4 sm:gap-8 flex-col flex-1">
         {dataList.map((item, index) => (
           <div key={index} className="flex gap-2 sm:gap-4 align-items-start">
-            <div className="block text-primary-3 mt-1">{item.icon}</div>
+            <div className="block text-primary-1 mt-1">{item.icon}</div>
             <div className="flex flex-col gap-2">
-              <h1 className="font-semibold text-xl sm:text-3xl text-primary-3">{item.title}</h1>
+              <h1 className="font-semibold text-xl sm:text-3xl text-primary-1">{item.title}</h1>
               <p className="font-normal text-base sm:text-lg">{item.desc}</p>
             </div>
           </div>

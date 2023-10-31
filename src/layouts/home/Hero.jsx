@@ -4,11 +4,11 @@ import Container from "../../components/container";
 import Filter from "../../components/filter";
 import Image from "../../components/image";
 
-const Header = () => {
+const Hero = () => {
   return (
     <Image src={header} className="min-h-500 md:min-h-700 flex items-end relative">
       <Filter intent="primary" />
-      <Container className="flex flex-col gap-6 z-1">
+      <Container className="flex flex-col gap-6 z-1 !my-8 md:!my-16">
         <h1 className="text-light-1 font-bold text-2xl sm:text-4xl md:text-6xl">
           Lorem Ipsum is simply dummy text of the printing and typesetting industry
         </h1>
@@ -24,4 +24,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Hero;

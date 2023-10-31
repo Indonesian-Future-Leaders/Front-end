@@ -1,5 +1,5 @@
+import Hero from "./home/Hero";
 import Data from "./home/Data";
-import Header from "./home/Header";
 import Artikel from "./home/Artikel";
 import Action from "./home/Action";
 import Programs from "./home/Programs";
@@ -10,8 +10,17 @@ import FieldProgram from "./program/FieldProgram";
 import FieldProject from "./project/FieldProject";
 import HeadBlog from "./blog/HeadBlog";
 import FieldBlog from "./blog/FieldBlog";
+import HeadAbout from "./about/HeadAbout";
+import FieldAbout from "./about/FieldAbout";
+import HeadDonate from "./donate/HeadDonate";
+import FieldDonate from "./donate/FieldDonate";
 
 export {
+  Hero,
+  HeadDonate,
+  FieldDonate,
+  HeadAbout,
+  FieldAbout,
   HeadBlog,
   FieldBlog,
   FieldProgram,
@@ -20,7 +29,6 @@ export {
   FieldProject,
   Shop,
   Data,
-  Header,
   Artikel,
   Action,
   Programs,

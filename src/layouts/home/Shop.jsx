@@ -8,25 +8,25 @@ import Image from "../../components/image";
 const Shop = () => {
   return (
     <div className="relative">
-      <Filter className="filter_custom_black" />
+      <Filter className="!from-dark-fade-2 from-0% to-50%" />
       <Container className="flex flex-col md:flex-row gap-8 py-16 !my-0">
         <Image src={shop} className="min-h-300 flex-1 z-1" />
-        <div className="flex flex-col gap-8 justify-evenly flex-1 z-1 max-w-full md:max-w-xs lg:max-w-md text-dark-1">
-          <h1 className="font-bold text-2xl text-primary-3">Buy & Donate</h1>
+        <div className="flex flex-col gap-8 justify-evenly flex-1 z-1 max-w-full lg:max-w-md text-dark-1">
+          <h1 className="font-bold text-2xl text-primary-1">Buy & Donate</h1>
           <p className="font-semibold">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis voluptatum architecto
             sapiente quas totam nihil ex voluptatibus labore odit vitae
           </p>
           <div className="flex gap-4 flex-wrap">
-            <Button intent="secondary" className="flex items-center gap-2 bg-primary-3">
+            <Button intent="secondary" className="flex items-center gap-2 bg-primary-1">
               <InstagramLogo size={24} />
               Instagram
             </Button>
-            <Button intent="secondary" className="flex items-center gap-2 bg-primary-3">
+            <Button intent="secondary" className="flex items-center gap-2 bg-primary-1">
               <ShoppingBag size={24} />
               Shopee
             </Button>
-            <Button intent="secondary" className="flex items-center gap-2 bg-primary-3">
+            <Button intent="secondary" className="flex items-center gap-2 bg-primary-1">
               <Storefront size={24} />
               Tokopedia
             </Button>

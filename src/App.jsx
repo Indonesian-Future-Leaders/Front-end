@@ -4,6 +4,7 @@ import Program from "./page/Program";
 import Project from "./page/Project";
 import About from "./page/About";
 import Blog from "./page/Blog";
+import Donate from "./page/Donate";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/project" element={<Project />} />
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/donate" element={<Donate />} />
       </Routes>
     </BrowserRouter>
   );

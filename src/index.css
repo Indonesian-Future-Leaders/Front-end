@@ -4,18 +4,27 @@
 
 @layer components {
   .navbar {
-    @apply block w-full shadow-md bg-primary-3 text-light-1 sticky top-0 z-20 py-4;
+    @apply block w-full shadow-md bg-primary-1 text-light-1 sticky top-0 z-20 py-4;
   }
   .navbar_child {
     @apply flex items-center justify-between px-4 md:px-8 lg:px-12 w-full relative;
   }
   .navbar_field {
-    @apply bg-primary-3 flex flex-col sm:flex-row justify-center items-center gap-8 absolute sm:static z-10 top-0 w-full sm:w-auto transition-all duration-300 ease-in h-screen sm:h-auto;
+    @apply bg-primary-1 flex flex-col sm:flex-row justify-center items-center gap-8 absolute sm:static z-10 top-0 w-full sm:w-auto transition-all duration-300 ease-in h-screen sm:h-auto;
   }
   .social_icon {
-    @apply text-light-1 p-2 rounded-full border-2 border-light-1 hover:text-primary-3 hover:bg-light-1 duration-300;
+    @apply text-light-1 p-2 rounded-full border-2 border-light-1 hover:text-primary-1 hover:bg-light-1 duration-300;
   }
-  .filter_custom_black {
-    @apply !from-[#00000070] from-0% to-50%;
+  .card {
+    @apply text-dark-1 flex flex-col justify-between items-center gap-4 p-4 shadow-lg border max-w-sm rounded-md;
+  }
+  .left_arrow_slider {
+    @apply absolute left-0 top-1/2 -translate-y-1/2 bg-gradient-to-r from-white from-65% to-transparent w-12 h-full flex items-center justify-start;
+  }
+  .right_arrow_slider {
+    @apply absolute right-0 top-1/2 -translate-y-1/2 bg-gradient-to-l from-white from-65% to-transparent w-12 h-full flex items-center justify-end;
+  }
+  .dropdown_content {
+    @apply hidden absolute rounded-md top-10 p-4 -left-6 sm:left-0 bg-light-1 text-primary-1 flex-col gap-2 group-hover:flex z-1;
   }
 }

@@ -1,19 +1,11 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { logo_ifl } from "../../assets";
-import { List, X } from "@phosphor-icons/react";
+import { CaretDown, List, X } from "@phosphor-icons/react";
 import { Button, Links } from "../button";
 import Image from "../image";
 
-const listMenu = [
-  { title: "Events", path: "/events" },
-  { title: "About Us", path: "/about" },
-  { title: "Buy & Donate", path: "/shop" },
-];
-
 const Navbar = () => {
-  const pathname = useLocation().pathname;
-
   const [openNav, setOpenNav] = React.useState(false);
 
   React.useEffect(() => {
@@ -36,21 +28,35 @@ const Navbar = () => {
         </button>
 
         <ul className={`navbar_field ${openNav ? "left-0" : "left-[-200%]"}`}>
-          {listMenu.map((item, index) => (
-            <Links
-              key={index}
-              to={item.path}
-              intent="underline"
-              className={`${
-                item.path === pathname ? "before:w-full text-light-2" : "before:w-0 text-light-1"
-              }`}
-            >
-              {item.title}
-            </Links>
-          ))}
-          <li className="text-xl font-medium p-1 relative group">
+          <div className="relative group">
+            <Button intent="navigation" className="!px-0 !shadow-none flex gap-1 items-center">
+              Events <CaretDown size={16} className="group-hover:rotate-180 transition-all mt-1" />
+            </Button>
+            <div className="dropdown_content">
+              <Link to="/program">
+                <Button intent="outline" size="small" className="!w-full !rounded !px-4">
+                  Program
+                </Button>
+              </Link>
+              <Link to="/project">
+                <Button intent="outline" size="small" className="!w-full !rounded !px-4">
+                  Project
+                </Button>
+              </Link>
+            </div>
+          </div>
+
+          <Links to="/about" intent="navigation">
+            About Us
+          </Links>
+
+          <Links to="/" intent="navigation">
+            Buy & Donate
+          </Links>
+
+          <Link to="/donate">
             <Button size="medium">DONATE</Button>
-          </li>
+          </Link>
         </ul>
       </div>
     </nav>

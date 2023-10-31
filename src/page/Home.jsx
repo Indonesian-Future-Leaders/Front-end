@@ -1,12 +1,12 @@
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
-import { Data, Header, Artikel, Action, Programs, Shop } from "../layouts";
+import { Data, Artikel, Action, Programs, Shop, Hero } from "../layouts";
 
 const Home = () => {
   return (
     <>
       <Navbar />
-      <Header />
+      <Hero />
       <Data />
       <Artikel />
       <Action />

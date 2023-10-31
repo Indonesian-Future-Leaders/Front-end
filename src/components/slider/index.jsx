@@ -1,8 +1,8 @@
 import React from "react";
+import { CaretCircleRight, CaretCircleLeft } from "@phosphor-icons/react";
 import { Button } from "../button";
-import { CaretCircleLeft, CaretCircleRight } from "@phosphor-icons/react";
 
-const Tab = ({ currentTab, totalTabs, onTabChange, type }) => {
+const Slider = ({ totalTabs, children, className }) => {
   const [translate, setTranslate] = React.useState(0);
   const [isLeftVisible, setIsLeftVisible] = React.useState(false);
   const [isRightVisible, setIsRightVisible] = React.useState(false);
@@ -17,51 +17,28 @@ const Tab = ({ currentTab, totalTabs, onTabChange, type }) => {
 
       setIsLeftVisible(translate > 0);
       setIsRightVisible(translate + container.clientWidth < container.scrollWidth);
+      setTranslate(container.clientWidth === container.scrollWidth ? 0 : translate);
     });
-
     observer.observe(containerRef.current);
 
     return () => {
       observer.disconnect();
     };
-  }, [totalTabs, translate, containerRef]);
+  }, [totalTabs, translate]);
 
   return (
     <div ref={containerRef} className="overflow-x-hidden relative">
       <div
-        className="flex gap-4 whitespace-nowrap transition-transform"
+        className={`flex gap-4 items-center whitespace-nowrap h-12 transition-transform duration-300 w-max ${className}`}
         style={{ transform: `translateX(-${translate}px)` }}
       >
-        {totalTabs.map((item, index) => (
-          <div key={index}>
-            {type === "underline" ? (
-              <Button
-                onClick={() => onTabChange(item)}
-                className={`${
-                  index === currentTab ? "before:w-1/2 text-primary-3" : "before:w-0 text-gray-500"
-                }`}
-                intent="underline"
-              >
-                {item}
-              </Button>
-            ) : (
-              <Button
-                onClick={() => onTabChange(item)}
-                className={`${index === currentTab ? "bg-primary-2" : "bg-primary-3"} rounded-sm`}
-                intent="secondary"
-              >
-                {item}
-              </Button>
-            )}
-          </div>
-        ))}
+        {children}
       </div>
       {isLeftVisible && (
-        <div className="absolute left-0 top-1/2 -translate-y-1/2 bg-gradient-to-r from-white from-50% to-transparent w-24 h-full">
+        <div className="left_arrow_slider">
           <Button
-            variant="ghost"
-            size="icon"
-            className="h-full aspect-square w-auto p-1.5"
+            className="!h-max !rounded-full !shadow-none !px-1"
+            size="small"
             onClick={() => {
               setTranslate((translate) => {
                 const newTranslate = translate - 200;
@@ -70,16 +47,15 @@ const Tab = ({ currentTab, totalTabs, onTabChange, type }) => {
               });
             }}
           >
-            <CaretCircleLeft />
+            <CaretCircleLeft size={24} />
           </Button>
         </div>
       )}
       {isRightVisible && (
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 bg-gradient-to-l from-white from-50% to-transparent w-24 h-full flex justify-end">
+        <div className="right_arrow_slider">
           <Button
-            variant="ghost"
-            size="icon"
-            className="h-full aspect-square w-auto p-1.5"
+            className="!h-max !rounded-full !shadow-none !px-1"
+            size="small"
             onClick={() => {
               setTranslate((translate) => {
                 if (containerRef.current == null) {
@@ -95,7 +71,7 @@ const Tab = ({ currentTab, totalTabs, onTabChange, type }) => {
               });
             }}
           >
-            <CaretCircleRight />
+            <CaretCircleRight size={24} />
           </Button>
         </div>
       )}
@@ -103,4 +79,4 @@ const Tab = ({ currentTab, totalTabs, onTabChange, type }) => {
   );
 };
 
-export default Tab;
+export default Slider;

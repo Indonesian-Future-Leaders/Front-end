@@ -4,14 +4,15 @@ import { Link } from "react-router-dom";
 const button = cva("button", {
   variants: {
     intent: {
-      primary: "bg-light-1 text-primary-3 rounded-3xl hover:bg-light-2",
+      primary: "bg-light-1 text-primary-1 rounded-3xl hover:bg-light-2",
       secondary: "text-light-1 rounded-3xl hover:bg-primary-2",
+      navigation: "!text-lg text-light-1 scale-100 hover:text-light-2 hover:scale-110",
       outline:
-        "bg-transparent text-primary-3 border-2 border-primary-3 hover:bg-primary-3 hover:text-light-1",
+        "bg-transparent text-primary-1 border-2 border-primary-1 hover:bg-primary-1 hover:text-light-1",
       outlineSecondary:
-        "bg-transparent text-light-1 border-2 border-light-1 hover:bg-light-1 hover:text-primary-3",
+        "bg-transparent text-light-1 border-2 border-light-1 hover:bg-light-1 hover:text-primary-1",
       underline:
-        "bg-light-1 !shadow-none border-none before:absolute before:-bottom-1 before:left-1/2 before:-translate-x-1/2 before:w-0 before:transition-all before:h-1 before:bg-primary-3 hover:before:w-1/2 hover:text-primary-3",
+        "bg-light-1 !shadow-none border-none before:absolute before:-bottom-1 before:left-1/2 before:-translate-x-1/2 before:w-0 before:transition-all before:h-1 before:bg-primary-1 hover:before:w-1/2 hover:text-primary-1",
     },
     size: {
       small: "text-sm py-1 px-2",
@@ -29,9 +30,8 @@ const link = cva("link", {
   variants: {
     intent: {
       primary: "text-light-1 hover:text-light-2 underline",
-      secondary: "text-primary-3 hover:text-primary-2 underline",
-      underline:
-        "border-none hover:text-light-2 before:absolute before:-bottom-1.5 before:left-1/2 before:-translate-x-1/2 before:w-0 before:transition-all before:h-1 before:bg-light-2 hover:before:w-full",
+      secondary: "text-primary-1 hover:text-primary-2 underline",
+      navigation: "text-light-1 scale-100 hover:text-light-2 hover:scale-110 py-2",
     },
   },
   defaultVariants: {
@@ -45,7 +45,7 @@ export const Button = ({ className, intent, size, ...props }) => (
       intent,
       size,
       className,
-    })} transition-all duration-300 shadow-sm font-medium w-max relative`}
+    })} transition-all duration-300 shadow-sm font-medium cursor-pointer w-max relative`}
     {...props}
   />
 );

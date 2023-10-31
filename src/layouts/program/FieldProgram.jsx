@@ -1,7 +1,7 @@
 import React from "react";
 import { wct_1, wct_2 } from "../../assets";
 import Container from "../../components/container";
-import Tab from "../../components/tab/Tab";
+import Tab from "../../components/tab";
 import Image from "../../components/image";
 
 const programList = [
@@ -20,17 +20,9 @@ const programList = [
 const FieldProgram = () => {
   const [currentTab, setCurrentTab] = React.useState(0);
 
-  const itemsPerTab = 1;
+  const lastIndex = currentTab + 1;
 
-  const onTabChange = (tab) => {
-    setCurrentTab(tab);
-  };
-
-  const startIndex = currentTab * itemsPerTab;
-
-  const endIndex = startIndex + itemsPerTab;
-
-  const itemsToDisplay = programList.slice(startIndex, endIndex);
+  const itemsToDisplay = programList.slice(currentTab, lastIndex);
 
   return (
     <Container className="!my-4 text-center !mb-16">
@@ -38,7 +30,7 @@ const FieldProgram = () => {
         type="underline"
         currentTab={currentTab}
         totalTabs={programList}
-        onTabChange={onTabChange}
+        onTabChange={(tab) => setCurrentTab(tab)}
       />
       <div className="mt-12  overflow-hidden">
         {itemsToDisplay.map((item, index) => (
