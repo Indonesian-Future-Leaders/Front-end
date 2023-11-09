@@ -2,12 +2,12 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 
 import { LazyMotion, m, domAnimation } from "framer-motion";
-import { logotext } from "../../assets/icons";
 
 import { CaretDown, List, X } from "@phosphor-icons/react";
 
+import { logotext } from "../../assets/icons";
 import { Button, Links } from "../button";
-import Image from "../image";
+import { Icon } from "../icon";
 
 const navList = [
   { title: "About Us", path: "/about" },
@@ -50,7 +50,7 @@ const Navbar = () => {
       <m.nav className="navbar">
         <menu className="navbar_child">
           <Link to="/" className="z-30 block cursor-pointer">
-            <Image src={logotext} className="!w-32 h-12 !bg-contain" />
+            <Icon src={logotext} size="logo" />
           </Link>
 
           <button className="relative z-20 text-xs text-center md:hidden" onClick={() => setOpenNav(!openNav)} type="button">

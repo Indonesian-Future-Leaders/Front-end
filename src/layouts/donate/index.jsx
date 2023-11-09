@@ -1,10 +1,10 @@
 import { ctg_1, ctg_2, wct_1, wct_2, head_blog } from "../../assets";
+import { BCA, BNI, BRI, BSI, Mandiri, dana, flip, gopay, ovo, shopeepay } from "../../assets/icons";
 
 import Hero from "../../components/hero";
 import Card from "../../components/card";
 import Container from "../../components/container";
-import { BCA, BNI, BRI, BSI, Mandiri, dana, flip, gopay, ovo, shopeepay } from "../../assets/icons";
-import Image from "../../components/image";
+import { Icon } from "../../components/icon";
 
 const donateList = [
   {
@@ -63,11 +63,11 @@ const DonateSection = () => {
             />
           ))}
         </menu>
-        <menu className="space-y-10 text-center mt-24">
-          <h1 className="text-2xl sm:text-3xl font-bold">Our Payment Methods</h1>
+        <menu className="mt-24 space-y-10 text-center">
+          <h1 className="text-2xl font-bold sm:text-3xl">Our Payment Methods</h1>
           <div className="grid grid-cols-2 gap-12 md:grid-cols-3 lg:grid-cols-5 place-items-center">
             {iconPayment.map((item, index) => (
-              <Image key={index} src={item} className="!w-14 h-10 rounded-md" />
+              <Icon key={index} src={item} size="large" />
             ))}
           </div>
         </menu>
