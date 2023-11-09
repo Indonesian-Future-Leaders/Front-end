@@ -1,13 +1,12 @@
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
-import { FieldBlog, HeadBlog } from "../layouts";
+import BlogSection from "../layouts/blog";
 
 const Blog = () => {
   return (
     <>
       <Navbar />
-      <HeadBlog />
-      <FieldBlog />
+      <BlogSection />
       <Footer />
     </>
   );

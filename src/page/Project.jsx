@@ -1,13 +1,12 @@
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
-import { FieldProject, HeadProject } from "../layouts";
+import ProjectSection from "../layouts/project";
 
 const Project = () => {
   return (
     <>
       <Navbar />
-      <HeadProject />
-      <FieldProject />
+      <ProjectSection />
       <Footer />
     </>
   );

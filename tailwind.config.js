@@ -21,8 +21,8 @@ export default {
         1124: "1124px",
       },
       colors: {
-        "filter-1": "#0096C725",
-        "filter-2": "#03055e25",
+        "filter-1": "#0096C750",
+        "filter-2": "#03055e50",
         "primary-1": "#0096C7",
         "primary-2": "#0077B6",
         "light-1": "#FFFFFF",

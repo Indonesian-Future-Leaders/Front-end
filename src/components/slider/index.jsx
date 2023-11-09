@@ -1,5 +1,7 @@
-import React from "react";
+import * as React from "react";
+
 import { CaretCircleRight, CaretCircleLeft } from "@phosphor-icons/react";
+
 import { Button } from "../button";
 
 const Slider = ({ totalTabs, children, className }) => {
@@ -27,7 +29,7 @@ const Slider = ({ totalTabs, children, className }) => {
   }, [totalTabs, translate]);
 
   return (
-    <div ref={containerRef} className="overflow-x-hidden relative">
+    <section ref={containerRef} className="relative overflow-x-hidden">
       <div
         className={`flex gap-4 items-center whitespace-nowrap h-12 transition-transform duration-300 w-max ${className}`}
         style={{ transform: `translateX(-${translate}px)` }}
@@ -75,7 +77,7 @@ const Slider = ({ totalTabs, children, className }) => {
           </Button>
         </div>
       )}
-    </div>
+    </section>
   );
 };
 

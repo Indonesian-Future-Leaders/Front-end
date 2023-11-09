@@ -1,22 +1,24 @@
+import { LazyLoadComponent } from "react-lazy-load-image-component";
+
 import Image from "../image";
 import { Button } from "../button";
 
 const Card = ({ className, type, path, category, title, desc, ...props }) => {
   return (
-    <div className={`${className} card`} {...props}>
-      <Image src={path} className="min-h-300 max-w-xs relative rounded-sm overflow-hidden">
-        {type === "blog" && (
-          <h6 className="font-medium text-sm absolute top-0 right-0 p-2 bg-dark-fade-1 text-light-1 rounded-es-lg">
-            {category}
-          </h6>
-        )}
-      </Image>
-      <h2 className="text-xl text-primary-1 font-semibold">{title}</h2>
-      <p className="leading-snug">{desc}</p>
-      <Button intent="outline" size="small" className="rounded-full px-4">
-        {type === "blog" ? "Read More" : "Donate Now"}
-      </Button>
-    </div>
+    <LazyLoadComponent>
+      <article className={`${className} card`} {...props}>
+        <Image src={path} className="max-w-xs overflow-hidden rounded-sm min-h-300">
+          {type === "blog" && (
+            <h6 className="absolute top-0 right-0 p-2 text-sm font-medium bg-dark-fade-1 text-light-1 rounded-es-lg">{category}</h6>
+          )}
+        </Image>
+        <h2 className="text-xl font-semibold text-primary-1">{title}</h2>
+        <p className="leading-snug">{desc}</p>
+        <Button intent="outline" size="small" className="px-4 rounded-full">
+          {type === "blog" ? "Read More" : "Donate Now"}
+        </Button>
+      </article>
+    </LazyLoadComponent>
   );
 };
 

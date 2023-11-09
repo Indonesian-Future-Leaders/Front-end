@@ -1,14 +1,16 @@
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
-import FieldDonate from "../layouts/donate/FieldDonate";
-import HeadDonate from "../layouts/donate/HeadDonate";
+import DonateSection from "../layouts/donate";
+// const LazyDonateSection = React.lazy(() => import("../layouts/donate"));
 
 const Donate = () => {
   return (
     <>
       <Navbar />
-      <HeadDonate />
-      <FieldDonate />
+      {/* <React.Suspense fallback={<div>...Loading</div>}>
+        <LazyDonateSection />
+      </React.Suspense> */}
+      <DonateSection />
       <Footer />
     </>
   );

@@ -9,9 +9,7 @@ const Tab = ({ currentTab, totalTabs, onTabChange, type }) => {
           {type === "underline" ? (
             <Button
               onClick={() => onTabChange(type === "underline" ? index : item)}
-              className={`${
-                index === currentTab ? "before:w-1/2 text-primary-1" : "before:w-0 text-gray-500"
-              }`}
+              className={`${index === currentTab ? "before:w-1/2 text-primary-1" : "before:w-0 text-gray-500"}`}
               intent="underline"
             >
               {type === "underline" ? item.title : item}

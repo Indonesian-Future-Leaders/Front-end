@@ -18,19 +18,10 @@ import wct_1 from "./else-image/wct_1.png";
 import wct_2 from "./else-image/wct_2.png";
 
 import head_blog from "./else-image/head_blog.png";
-
-import tokopedia from "./icons/Tokopedia.svg";
-import shopee from "./icons/Shopee.svg";
-import twitter from "./icons/TwitterX.svg";
-import linkedin from "./icons/LinkedIn.svg";
-import instagram from "./icons/Instagram.svg";
+import head from "./else-image/head.png";
 
 export {
-  tokopedia,
-  shopee,
-  twitter,
-  linkedin,
-  instagram,
+  head,
   head_blog,
   head_program,
   head_project,
