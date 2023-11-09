@@ -1,18 +1,17 @@
 import { Link } from "react-router-dom";
 
-import { LazyLoadComponent } from "react-lazy-load-image-component";
-
 import { logotext } from "../../assets/icons";
 
 import Container from "../container";
 import Image from "../image";
 
 import { socialIconsList, socialIconsTextList } from "../../utilities/static/data";
+import { LazyMotion, domAnimation, m } from "framer-motion";
 
 const Footer = () => {
   return (
-    <LazyLoadComponent>
-      <footer className="bg-primary-1">
+    <LazyMotion features={domAnimation}>
+      <m.footer className="bg-primary-1">
         <Container className="!my-0 py-8">
           <div className="flex flex-wrap justify-between gap-4">
             <menu className="space-y-2">
@@ -38,8 +37,8 @@ const Footer = () => {
             <li className="text-sm font-medium sm:text-base">COPYRIGHT &copy; 2023 INDONESIA FUTURE LEADERS</li>
           </menu>
         </Container>
-      </footer>
-    </LazyLoadComponent>
+      </m.footer>
+    </LazyMotion>
   );
 };
 

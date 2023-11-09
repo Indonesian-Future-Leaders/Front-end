@@ -1,8 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 
-import { LazyLoadComponent } from "react-lazy-load-image-component";
-
+import { LazyMotion, m, domAnimation } from "framer-motion";
 import { logotext } from "../../assets/icons";
 
 import { CaretDown, List, X } from "@phosphor-icons/react";
@@ -47,8 +46,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <LazyLoadComponent>
-      <nav className="navbar">
+    <LazyMotion features={domAnimation}>
+      <m.nav className="navbar">
         <menu className="navbar_child">
           <Link to="/" className="z-30 block cursor-pointer">
             <Image src={logotext} className="!w-32 h-12 !bg-contain" />
@@ -72,8 +71,8 @@ const Navbar = () => {
             </Link>
           </ul>
         </menu>
-      </nav>
-    </LazyLoadComponent>
+      </m.nav>
+    </LazyMotion>
   );
 };
 
