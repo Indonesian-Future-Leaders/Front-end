@@ -1,4 +1,3 @@
-import logo_ifl from "./logo_ifl.png";
 import header from "./home-image/header.png";
 import content from "./home-image/content.png";
 import artikel from "./home-image/artikel.png";
@@ -29,7 +28,6 @@ export {
   ctg_2,
   wct_1,
   wct_2,
-  logo_ifl,
   header,
   content,
   artikel,

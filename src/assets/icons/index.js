@@ -1,5 +1,4 @@
-import logotext from "./Logo-IFL-Text.png";
-import logo from "./Logo-IFL.png";
+import logotext from "./Logo-IFL-Text.svg";
 
 import tokopedia from "./Tokopedia.svg";
 import shopee from "./Shopee.svg";
@@ -33,7 +32,6 @@ export {
   Mandiri,
   BCA,
   logotext,
-  logo,
   gmail,
   tokopedia,
   shopee,

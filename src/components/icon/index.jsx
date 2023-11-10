@@ -5,7 +5,7 @@ const icon = cva("icon", {
     size: {
       medium: "w-4 h-4 sm:h-6 sm:w-6",
       large: "w-12 h-8 sm:w-14 sm:h-10",
-      logo: "w-28 h-9 sm:w-32 sm:h-10",
+      logo: "w-28 h-14 sm:w-32 sm:h-16",
     },
   },
   defaultVariants: {

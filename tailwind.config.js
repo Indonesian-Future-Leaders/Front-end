@@ -13,9 +13,7 @@ export default {
       },
       zIndex: {
         1: 1,
-        10: 10,
-        20: 20,
-        30: 30,
+        5: 5,
       },
       maxWidth: {
         1124: "1124px",
