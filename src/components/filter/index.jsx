@@ -4,8 +4,8 @@ const filter = cva("filter", {
   variants: {
     intent: {
       primary: "from-filter-2 to-filter-1",
-      secondary: "from-primary-1 from-5% via-transparent via-50% to-light-1 to-100%",
-      default: "from-dark-fade-1 to-light-fade",
+      secondary: "from-primary-1 from-0% via-transparent via-80% to-light-1 to-100%",
+      default: "from-dark-fade to-light-fade",
     },
   },
   defaultVariants: {

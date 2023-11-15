@@ -11,7 +11,7 @@ import { Icon } from "../icon";
 
 const navList = [
   { title: "About Us", path: "/about" },
-  { title: "Buy & Donate", path: "/" },
+  { title: "Buy & Donate", path: "/#shop" },
   { title: "Donate", path: "/donate" },
 ];
 
@@ -53,9 +53,9 @@ const Navbar = () => {
             <Icon src={logotext} size="logo" />
           </Link>
 
-          <button className="relative z-20 text-xs text-center md:hidden" onClick={() => setOpenNav(!openNav)} type="button">
+          <Button size="small" className="z-20 md:hidden" onClick={() => setOpenNav(!openNav)}>
             {openNav ? <X size={36} /> : <List size={36} />}
-          </button>
+          </Button>
 
           <ul className={`navbar_field ${openNav ? "left-0" : "left-[-200%]"}`}>
             <EventsDropdown />

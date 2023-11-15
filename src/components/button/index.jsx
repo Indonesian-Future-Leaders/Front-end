@@ -1,6 +1,5 @@
 import { cva } from "class-variance-authority";
-
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const button = cva("button", {
   variants: {
@@ -9,6 +8,7 @@ const button = cva("button", {
       secondary: "text-light-1 bg-primary-1 rounded-3xl hover:bg-primary-2",
       navigation: "!text-base md:!text-lg text-light-1 scale-100 hover:text-light-2 hover:scale-110",
       outline: "bg-transparent text-primary-1 border-2 border-primary-1 hover:bg-primary-1 hover:text-light-1",
+      outlineTransparent: "text-light-1 border-light-1 border-2 hover:bg-light-1 hover:text-primary-1",
       underline:
         "bg-light-1 !shadow-none border-none before:absolute before:-bottom-1 before:left-1/2 before:-translate-x-1/2 before:w-0 before:transition-all before:h-1 before:bg-primary-1 hover:before:w-1/2 hover:text-primary-1",
     },
@@ -43,17 +43,18 @@ export const Button = ({ className, intent, size, ...props }) => (
       intent,
       size,
       className,
-    })} transition-all duration-300 shadow-sm font-semibold cursor-pointer w-max relative flex items-center justify-center`}
+    })} button`}
     {...props}
   />
 );
 
 export const Links = ({ className, intent, ...props }) => (
-  <Link
+  <HashLink
+    smooth
     className={`${link({
       intent,
       className,
-    })} text-base md:text-lg transition-all duration-300 font-semibold cursor-pointer w-max relative`}
+    })} link`}
     {...props}
   />
 );

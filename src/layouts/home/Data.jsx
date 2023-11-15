@@ -2,6 +2,7 @@ import { AppWindow, ProjectorScreenChart, Users } from "@phosphor-icons/react";
 
 import { Button } from "../../components/button";
 import Container from "../../components/container";
+import { Link } from "react-router-dom";
 
 const dataList = [
   {
@@ -30,9 +31,11 @@ const Data = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae praesentium, laudantium ea eaque obcaecati quia. Lorem ipsum dolor sit amet
           consectetur adipisicing elit. Quo pariatur rem ab molestiae animi fuga porro dignissimos at nemo quam?
         </p>
-        <Button intent="outline" className="px-8 uppercase">
-          Learn More About Us
-        </Button>
+        <Link to="/about" className="block">
+          <Button intent="outline" className="px-8 uppercase">
+            Learn More About Us
+          </Button>
+        </Link>
       </menu>
       <menu className="flex-1 space-y-4 sm:space-y-8">
         {dataList.map((item, index) => (

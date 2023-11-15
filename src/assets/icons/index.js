@@ -1,4 +1,5 @@
 import logotext from "./Logo-IFL-Text.svg";
+import message from "./message.svg";
 
 import tokopedia from "./Tokopedia.svg";
 import shopee from "./Shopee.svg";
@@ -21,6 +22,7 @@ import Mandiri from "./Mandiri.svg";
 import BCA from "./BCA.svg";
 
 export {
+  message,
   shopeepay,
   flip,
   dana,

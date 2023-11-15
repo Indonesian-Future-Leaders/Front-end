@@ -1,6 +1,5 @@
-import { ACT, INITIATE, INSPIRE, ctg_1, ctg_2 } from "../../assets";
-import { wct_1, wct_2 } from "../../assets";
-import { gmail, instagram, linkedin, tiktok, youtube } from "../../assets/icons";
+import { ACT, INITIATE, INSPIRE, ctg_1, ctg_2, wct_1, wct_2 } from "../assets";
+import { gmail, instagram, linkedin, tiktok, youtube } from "../assets/icons";
 
 export const socialIconsList = [
   { image: instagram, path: "https://www.instagram.com/ifutureleaders_malang/" },

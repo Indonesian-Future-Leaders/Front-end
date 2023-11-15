@@ -1,12 +1,11 @@
 import { LazyMotion, domAnimation, m } from "framer-motion";
-import { Link } from "react-router-dom";
-
 import { logotext } from "../../assets/icons";
 
 import Container from "../container";
 import { Icon } from "../icon";
+import { Links } from "../button";
 
-import { socialIconsList, socialIconsTextList } from "../../utilities/static/data";
+import { socialIconsList, socialIconsTextList } from "../../static/data";
 
 const Footer = () => {
   return (
@@ -22,9 +21,9 @@ const Footer = () => {
                 </a>
               ))}
             </menu>
-            <Link href="/" className="flex items-center md:pr-10">
+            <Links to="/" className="flex items-center md:pr-10">
               <Icon src={logotext} size="logo" />
-            </Link>
+            </Links>
             <menu className="flex items-center gap-4">
               {socialIconsList.map((item, index) => (
                 <a key={index} href={item.path} className="social_icon" rel="noreferrer" target="_blank">

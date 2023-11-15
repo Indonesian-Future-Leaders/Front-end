@@ -2,11 +2,9 @@ import { useForm } from "react-hook-form";
 
 import { Envelope, User } from "@phosphor-icons/react";
 
-import Image from "../../components/image";
-import { head } from "../../assets";
-import Filter from "../../components/filter";
 import { Button, Links } from "../../components/button";
 import { InputField, InputPasswordField } from "../../components/input";
+import Background from "../../components/background";
 
 const Link = () => (
   <Links to="/login" intent="secondary" className="!no-underline !text-sm">
@@ -19,8 +17,7 @@ const Register = () => {
 
   const onSubmit = (data) => console.log(data);
   return (
-    <Image src={head} className="relative min-h-screen !bg-bottom !justify-center p-4">
-      <Filter intent="primary" />
+    <Background>
       <div className="card_form">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <h5 className="text-2xl font-bold text-center text-dark-1">Sign Up</h5>
@@ -58,7 +55,7 @@ const Register = () => {
           </Button>
         </form>
       </div>
-    </Image>
+    </Background>
   );
 };
 

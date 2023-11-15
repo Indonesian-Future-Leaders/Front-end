@@ -1,6 +1,6 @@
 import Container from "../../components/container";
 import Image from "../../components/image";
-import { pillarsActionList } from "../../utilities/static/data";
+import { pillarsActionList } from "../../static/data";
 
 const Action = () => {
   return (

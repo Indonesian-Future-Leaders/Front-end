@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { ctg_1, ctg_2, head_blog, wct_1, wct_2 } from "../../assets";
+import { ctg_1, ctg_2, image_blog, wct_1, wct_2 } from "../../assets";
 
 import Container from "../../components/container";
 import Tab from "../../components/tab";
@@ -56,13 +56,22 @@ const BlogSection = () => {
 
   return (
     <>
-      <Hero title="IFL BLOG" description={desc} image={head_blog} />
+      <Hero title="IFL BLOG" description={desc} image={image_blog} />
 
-      <Container className="text-center">
+      <Container>
         <Tab type="secondary" currentTab={selectedCategory} totalTabs={categories} onTabChange={onCategoryChange} />
         <div className="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3 place-items-center">
           {filteredItems.map((item, index) => (
-            <Card key={index} keys={item} path={item.image} category={item.category} title={item.title} desc={item.desc} type="blog" />
+            <Card
+              key={index}
+              className="cursor-pointer hover:scale-105 duration-300"
+              keys={item}
+              path={item.image}
+              category={item.category}
+              title={item.title}
+              desc={item.desc}
+              type="blog"
+            />
           ))}
         </div>
       </Container>

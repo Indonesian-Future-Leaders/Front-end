@@ -1,4 +1,4 @@
-import { ctg_1, ctg_2, wct_1, wct_2, head_blog } from "../../assets";
+import { ctg_1, ctg_2, wct_1, wct_2, image_donation } from "../../assets";
 import { BCA, BNI, BRI, BSI, Mandiri, dana, flip, gopay, ovo, shopeepay } from "../../assets/icons";
 
 import Hero from "../../components/hero";
@@ -47,8 +47,8 @@ const iconPayment = [BRI, BSI, BNI, Mandiri, BCA, gopay, flip, shopeepay, dana, 
 const DonateSection = () => {
   return (
     <>
-      <Hero title="Your Donation Matters" description={desc} image={head_blog} />
-      <Container className="text-center">
+      <Hero title="Your Donation Matters" description={desc} image={image_donation} />
+      <Container>
         <menu className="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3 place-items-center">
           {donateList.map((item, index) => (
             <Card
@@ -59,7 +59,7 @@ const DonateSection = () => {
               title={item.title}
               desc={item.desc}
               type="donate"
-              className="!rounded-xl"
+              className="!rounded-3xl"
             />
           ))}
         </menu>

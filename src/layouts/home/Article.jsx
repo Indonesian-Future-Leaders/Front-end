@@ -8,7 +8,7 @@ import { Links } from "../../components/button";
 const Article = () => {
   return (
     <>
-      <Image src={artikel} className="min-h-500 md:min-h-700">
+      <Image src={artikel} className="min-h-700 md:min-h-1000">
         <Filter intent="secondary" />
       </Image>
       <div className="py-4 bg-primary-1 text-dark-1">

@@ -1,4 +1,7 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
+
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+
 import Home from "./page/Home";
 import Program from "./page/Program";
 import Project from "./page/Project";
@@ -10,10 +13,22 @@ import Register from "./layouts/register";
 import ComingSoon from "./page/ComingSoon";
 import NotFoundPage from "./page/NotFoundPage";
 import Profile from "./page/Profile";
+import VerifyPage from "./page/VerifyPage";
+
+export function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 const App = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/program" element={<Program />} />
@@ -26,6 +41,7 @@ const App = () => {
         <Route path="/donate" element={<Donate />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/verify" element={<VerifyPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
