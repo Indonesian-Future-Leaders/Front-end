@@ -8,7 +8,7 @@ import Image from "../../components/image";
 
 const Hero = () => {
   return (
-    <Image src={image_iflta} className="min-h-400 sm:min-h-500">
+    <Image src={image_iflta} className="min-h-400 sm:min-h-500 md:min-h-custom-header">
       <Filter intent="primary" />
       <Container className="space-y-6 z-1 !my-8 md:!my-16 text-light-1">
         <h1 className="text-2xl font-bold sm:text-3xl md:text-5xl">Empower change with a small act of kindness</h1>

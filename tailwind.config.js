@@ -4,6 +4,7 @@ export default {
   theme: {
     extend: {
       minHeight: {
+        "custom-header": "calc(100vh - 88px)",
         200: "200px",
         300: "300px",
         400: "400px",
