@@ -18,6 +18,9 @@ export default {
         1: 1,
         5: 5,
       },
+      minWidth: {
+        200: "200px",
+      },
       maxWidth: {
         100: "100px",
         200: "200px",

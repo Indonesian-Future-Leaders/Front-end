@@ -15,6 +15,12 @@ import Image from "../../components/image";
 //   { title: "Many variations" },
 // ];
 
+const founder = [
+  { name: "M. Imam usman", image: imam_usman },
+  { name: "Andhyta F. Utami", image: andhyta },
+  { name: "Niwa R. Dwitama", image: niwa },
+];
+
 const HeadAbout = () => {
   // const [currentTab, setCurrentTab] = React.useState(0);
 
@@ -32,9 +38,15 @@ const HeadAbout = () => {
           berusia 17-18 tahun yang terdiri atas :
         </p>
         <div className="flex flex-wrap gap-16 items-center justify-center">
-          <Image src={imam_usman} className="min-h-200 max-w-200" />
-          <Image src={andhyta} className="min-h-200 max-w-200" />
-          <Image src={niwa} className="min-h-200 max-w-200" />
+          {founder.map((item, index) => {
+            const { name, image } = item;
+            return (
+              <div key={index} className="space-y-2 text-dark-1 text-center">
+                <Image src={image} className="min-h-200 min-w-200" />
+                <h1 className="font-bold">{name}</h1>
+              </div>
+            );
+          })}
         </div>
         <p className="text-lg leading-relaxed">
           Serta 3 pemuda lainnya yaitu Dian Aditya Ning Lestari, Stephanie Herdjo, dan Audry Maulana. Mereka percaya bahwa untuk memajukan Indonesia,
