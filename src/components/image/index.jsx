@@ -6,7 +6,7 @@ const Image = ({ className, src, children, ...props }) => {
       <m.figure
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ opacity: { duration: 0.4 } }}
+        transition={{ opacity: { delay: 0.3, duration: 0.4 } }}
         style={{
           backgroundImage: `url(${src})`,
         }}
