@@ -1,47 +1,57 @@
-import header from "./home-image/header.png";
-import content from "./home-image/content.png";
-import artikel from "./home-image/artikel.png";
-import programs from "./home-image/programs.png";
-import project from "./home-image/projects.png";
-import shop from "./home-image/shop.png";
-import ACT from "./image/ACT.png";
-import INITIATE from "./image/INITIATE.png";
-import INSPIRE from "./image/INSPIRE.png";
+import ACT from "./image/ACT.webp";
+import INITIATE from "./image/INITIATE.webp";
+import INSPIRE from "./image/INSPIRE.webp";
+import background_login_register from "./image/background-login.webp";
+import background_program_project from "./image/background-program.webp";
+import article from "./image/article.webp";
+import image_tumbler from "./image/tumbler-pic.webp";
+import image_blog from "./image/blog-pic.webp";
+import image_donation from "./image/donation-pic.webp";
+import image_iflta from "./image/project-iflta.webp";
+import image_yq from "./image/project-yq.webp";
+import image_gtg from "./image/project-gtg.webp";
+import image_project from "./image/project-pic.webp";
+import image_program from "./image/program-pic.webp";
+import image_wct from "./image/program-wct.webp";
+import image_ap from "./image/program-ap.webp";
+import imam_usman from "./image/imam-usman.webp";
+import andhyta from "./image/andhyta.webp";
+import niwa from "./image/niwa.webp";
 
-import background_login_register from "./image/background-login.png";
-import background_program_project from "./image/background-program.png";
-import image_tumbler from "./image/image-tumbler.png";
-import image_blog from "./image/image-blog.png";
-import image_donation from "./image/image-donation.png";
-import image_head from "./image/image-head.png";
+import image_comsoon from "./image/image-coming-soon.png";
 
-import head_program from "./else-image/head_program.png";
-import head_project from "./else-image/head_project.png";
-import ctg_1 from "./else-image/ctg_1.png";
-import ctg_2 from "./else-image/ctg_2.png";
-import wct_1 from "./else-image/wct_1.png";
-import wct_2 from "./else-image/wct_2.png";
+import raising_awareness_cfd from "./temp/raising-awareness-cfd.webp";
+import charity_cfd from "./temp/charity-cfd.webp";
+import booth_gypsum from "./temp/booth-gypsum.webp";
+import comser_wct from "./temp/comser-wct.webp";
+import capbud_mcc from "./temp/capbud-mcc.webp";
+import webinar_wct from "./temp/webinar-wct.webp";
 
 export {
-  head_program,
-  head_project,
-  ctg_1,
-  ctg_2,
-  wct_1,
-  wct_2,
-  header,
-  content,
-  artikel,
-  programs,
-  project,
-  shop,
   background_login_register,
   background_program_project,
+  article,
+  image_comsoon,
   image_tumbler,
   image_blog,
   image_donation,
-  image_head,
+  image_iflta,
+  image_ap,
+  image_yq,
+  image_gtg,
+  image_project,
+  image_program,
+  image_wct,
   ACT,
   INITIATE,
   INSPIRE,
+  imam_usman,
+  andhyta,
+  niwa,
+  raising_awareness_cfd,
+  charity_cfd,
+  booth_gypsum,
+  comser_wct,
+  capbud_mcc,
+  webinar_wct,
 };

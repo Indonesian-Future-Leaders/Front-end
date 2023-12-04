@@ -13,7 +13,7 @@ const Action = () => {
         {pillarsActionList.map((item, index) => (
           <div key={index} className="flex flex-col items-center gap-2 text-center">
             <Image src={item.icon} className="h-28 !w-28" />
-            <h3 className="text-2xl font-bold text-primary-1">{item.title}</h3>
+            <h1 className="text-2xl font-bold text-primary-1">{item.title}</h1>
             <p className="tracking-wide">{item.desc}</p>
           </div>
         ))}

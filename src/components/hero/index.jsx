@@ -4,11 +4,11 @@ import Image from "../image";
 
 const Hero = ({ type, title, description, image }) => {
   const HeroWithText = () => (
-    <Image src={image} className="min-h-500 md:min-h-700">
+    <Image src={image} className="min-h-500">
       <Filter intent="primary" />
       <Container className="space-y-6 z-1 !my-8 md:!my-16 text-light-1">
         <h1 className="text-2xl font-semibold sm:text-4xl md:text-6xl">{title}</h1>
-        <p className="text-lg font-medium leading-relaxed sm:text-xl md:text-2xl">{description}</p>
+        <p className="text-lg font-medium leading-relaxed text-justify sm:text-xl md:text-2xl">{description}</p>
       </Container>
     </Image>
   );

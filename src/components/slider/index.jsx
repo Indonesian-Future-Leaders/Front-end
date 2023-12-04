@@ -31,7 +31,7 @@ const Slider = ({ totalTabs, children, className }) => {
   return (
     <section ref={containerRef} className="relative overflow-x-hidden">
       <div
-        className={`flex gap-4 items-center whitespace-nowrap h-12 transition-transform duration-300 w-max ${className}`}
+        className={`flex gap-4 items-center whitespace-nowrap h-12 transition-transform duration-300 w-max ${className ?? ""}`}
         style={{ transform: `translateX(-${translate}px)` }}
       >
         {children}

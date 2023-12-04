@@ -1,11 +1,12 @@
 import * as React from "react";
 
-import { ctg_1, ctg_2, image_blog, wct_1, wct_2 } from "../../assets";
+import { ctg_1, ctg_2, wct_1, wct_2 } from "../../assets";
 
 import Container from "../../components/container";
 import Tab from "../../components/tab";
 import Card from "../../components/card";
 import Hero from "../../components/hero";
+import { headBlog } from "../../static/data";
 
 const programList = [
   {
@@ -40,9 +41,6 @@ const programList = [
   },
 ];
 
-const desc =
-  "Culpa dolor a qui quibusdam, delectus, similique sint deleniti labore molestias asperiores numquam obcaecati corporis, officiis impedit sit mollitia praesentium consequuntur sapiente consectetur ullam? Omnis tempore eos ullam reprehenderit sed unde. Quas quasi rerum voluptatem incidunt et dignissimos delectus aperiam voluptatum maiores.";
-
 const BlogSection = () => {
   const [selectedCategory, setSelectedCategory] = React.useState("All");
 
@@ -56,7 +54,7 @@ const BlogSection = () => {
 
   return (
     <>
-      <Hero title="IFL BLOG" description={desc} image={image_blog} />
+      <Hero title={headBlog.title} description={headBlog.description} image={headBlog.image} />
 
       <Container>
         <Tab type="secondary" currentTab={selectedCategory} totalTabs={categories} onTabChange={onCategoryChange} />

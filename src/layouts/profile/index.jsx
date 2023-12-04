@@ -1,115 +1,182 @@
 import * as React from "react";
 
-import { head_program } from "../../assets";
+import { head_program, profile_picture } from "../../assets";
 
 import Container from "../../components/container";
 import Image from "../../components/image";
 import Filter from "../../components/filter";
-
-import { CameraPlus, Envelope, User, IdentificationCard, PencilSimple, Eye, EyeSlash, Lock } from "@phosphor-icons/react";
+// CameraPlus
+import { Envelope, User, IdentificationCard, PencilSimple, PhoneCall, AddressBook } from "@phosphor-icons/react";
 import { Button } from "../../components/button";
+import Loading from "../../components/loader";
 
-const ProfileSection = () => {
-  const [isVisible, setVisible] = React.useState(false);
+const ProfileSection = ({ data, mutate, isPending, mutateAboutMe, isAboutMePending }) => {
+  const [isInput, setChangeToInput] = React.useState(false);
+
+  const [input, setInput] = React.useState({
+    username: "",
+    name: "",
+    phone_number: "",
+    address: "",
+    about_me: "",
+  });
+
+  const handleChangeInput = (e) => {
+    let newState = { ...input };
+    let { name, value } = e.target;
+    newState[name] = value;
+    setInput(newState);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { username, name, phone_number, address } = input;
+    mutate({
+      username,
+      name,
+      phone_number,
+      address,
+    });
+  };
+
+  const handleAboutSubmit = (e) => {
+    e.preventDefault();
+    const { about_me } = input;
+    mutateAboutMe({ about_me });
+  };
 
   const inputFieldValue = [
-    { title: "Email", type: "email", value: "helmyfadlail.5@gmail.com", icon: <Envelope size={24} weight="bold" /> },
+    { title: "Email", type: "email", value: data?.email, icon: <Envelope size={24} weight="bold" /> },
     {
       title: "Username",
+      name: "username",
       type: "text",
-      value: "helmy_fadlail",
+      value: data?.username,
       icon: <User size={24} weight="bold" />,
       editIcon: <PencilSimple size={20} weight="bold" />,
     },
     {
       title: "Name",
+      name: "name",
       type: "text",
-      value: "Helmy Fadlail Albab",
+      value: data?.name,
       icon: <IdentificationCard size={24} weight="bold" />,
       editIcon: <PencilSimple size={20} weight="bold" />,
     },
     {
-      title: "Password",
-      type: isVisible ? "text" : "password",
-      value: "albab",
-      icon: <Lock size={24} weight="bold" />,
-      showPasswordIcon: <Eye size={20} weight="bold" />,
-      hidePasswordIcon: <EyeSlash size={20} weight="bold" />,
+      title: "Phone Number",
+      name: "phone_number",
+      type: "number",
+      value: data?.phone_number,
+      icon: <PhoneCall size={24} weight="bold" />,
+      editIcon: <PencilSimple size={20} weight="bold" />,
+    },
+    {
+      title: "Address",
+      name: "address",
+      type: "text",
+      value: data?.address,
+      icon: <AddressBook size={24} weight="bold" />,
       editIcon: <PencilSimple size={20} weight="bold" />,
     },
   ];
 
   return (
     <>
-      <Image src={head_program} className="min-h-300 text-light-1">
-        <Filter intent="primary" />
+      <Image src={data?.background_picture || head_program} className="min-h-400 text-light-1">
+        <Filter />
         <Container className="z-1 flex gap-20 !my-8">
-          <div className="w-full max-w-sm flex-1 hidden sm:block"></div>
-          <div className="w-full flex-1 space-y-2">
+          <div className="flex-1 w-full space-y-2">
             <h1 className="text-3xl">Welcome to your profile,</h1>
-            <h1 className="text-4xl font-bold tracking-wide">Helmy Fadlail Albab</h1>
+            <h1 className="text-4xl font-bold tracking-wide">{data?.name}</h1>
           </div>
+          {/* <button>
+            <CameraPlus size={36} weight="bold" />
+          </button> */}
         </Container>
-        <button className="z-1 absolute right-8 bottom-8">
-          <CameraPlus size={36} weight="bold" />
-        </button>
       </Image>
 
-      <Container className="flex flex-col gap-8 sm:gap-4 md:gap-20 sm:justify-start sm:flex-row !my-0 h-fit sm:min-h-700 md:min-h-600">
-        <div className="flex-1 relative w-full max-w-sm">
-          <div className="absolute left-0 -top-20 shadow-lg">
-            <Image className="min-h-400 !bg-slate-300 !flex-row !items-end !justify-between p-4 text-light-1">
-              <Filter />
-              <h1 className="text-3xl font-bold z-1">Helmy</h1>
-              <button className="z-1">
-                <CameraPlus size={28} weight="bold" />
-              </button>
-            </Image>
-            <div className="px-4 pt-2 pb-8 space-y-2">
-              <div className="flex justify-between">
-                <h1 className="text-2xl text-primary-1 uppercase font-bold">About</h1>
-                <button>
-                  <PencilSimple size={24} weight="bold" />
-                </button>
-              </div>
-              <p className="text-sm text-justify leading-6">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum alias corporis aperiam nulla, doloremque dicta adipisci nobis.
-                Dolores, eligendi consequuntur aspernatur esse reiciendis obcaecati suscipit minima. Commodi nostrum est odio?
-              </p>
+      <Container className="container_profile_section">
+        <div className="flex-1 w-full max-w-sm shadow-lg">
+          <Image
+            src={data?.profile_picture || profile_picture}
+            className="min-h-400 w-full !bg-slate-300 !flex-row !items-end !justify-between p-4 text-light-1"
+          >
+            <Filter />
+            <h1 className="text-2xl font-bold z-1">{data?.username}</h1>
+            {/* <button className="z-1">
+              <CameraPlus size={28} weight="bold" />
+            </button> */}
+          </Image>
+          <div className="px-4 pt-2 pb-4 space-y-2">
+            <div className="flex justify-between">
+              <h1 className="text-2xl font-bold uppercase text-primary-1">About</h1>
+              <Button className="!p-1" onClick={() => setChangeToInput((prevState) => !prevState)}>
+                <PencilSimple size={24} weight="bold" />
+              </Button>
             </div>
+            {isInput ? (
+              <>
+                {isAboutMePending ? (
+                  <Loading height={50} width={50} />
+                ) : (
+                  <form onSubmit={handleAboutSubmit} className="space-y-2">
+                    <textarea
+                      id="message"
+                      rows="5"
+                      className="block p-2.5 w-full text-sm leading-relaxed text-dark-1 bg-light-1 rounded-lg border border-gray-300 outline-primary-1"
+                      defaultValue={data?.about_me}
+                      onChange={handleChangeInput}
+                      name="about_me"
+                    ></textarea>
+                    <Button type="submit" intent="secondary" className="!text-sm">
+                      Save Changes
+                    </Button>
+                  </form>
+                )}
+              </>
+            ) : (
+              <p className="text-sm leading-6 text-justify">{data?.about_me}</p>
+            )}
           </div>
         </div>
-        <div className="flex-1 w-full max-w-md mt-8">
+        <div className="flex-1 w-full">
           <h1 className="text-3xl font-bold text-center text-primary-1 sm:text-start">PROFILE</h1>
-          <form action="">
-            <menu className="px-8 mt-4 space-y-4">
-              {inputFieldValue.map((item, index) => {
-                const { title, type, value, icon, showPasswordIcon, hidePasswordIcon, editIcon } = item;
-                return (
-                  <li key={index} className="relative">
-                    <label htmlFor={title} className="font-medium text-dark-1">
-                      {title}
-                    </label>
-                    <i className="absolute left-0 bottom-2">{icon}</i>
-                    <input type={type} id={title} className="font-medium input_form" defaultValue={value} />
-                    {title === "Password" && (
-                      <button type="button" onClick={() => setVisible(!isVisible)} className="absolute right-6 px-2 py-2 bottom-1 bg-light-1">
-                        {isVisible ? showPasswordIcon : hidePasswordIcon}
-                      </button>
-                    )}
-                    {title !== "Email" && (
-                      <button type="button" className="absolute right-0 px-1 py-2 bottom-1 bg-light-1">
-                        {editIcon}
-                      </button>
-                    )}
-                  </li>
-                );
-              })}
-              <Button intent="secondary" className="ms-auto">
-                Save Changes
-              </Button>
-            </menu>
-          </form>
+          {isPending ? (
+            <Loading height={100} width={100} />
+          ) : (
+            <form onSubmit={handleSubmit}>
+              <menu className="mt-4 space-y-4">
+                {inputFieldValue.map((item, index) => {
+                  const { title, name, type, value, icon, editIcon } = item;
+                  return (
+                    <li key={index} className="relative">
+                      <label htmlFor={title} className="text-lg font-medium text-dark-1">
+                        {title}
+                      </label>
+                      <i className="absolute left-0 bottom-2">{icon}</i>
+                      {title === "Email" && <input type={type} id={title} className="font-medium input_form" value={value} readOnly />}
+                      {title !== "Email" && (
+                        <input
+                          onChange={handleChangeInput}
+                          type={type}
+                          id={title}
+                          name={name}
+                          placeholder={title}
+                          className="font-medium input_form"
+                          defaultValue={value}
+                        />
+                      )}
+                      {title !== "Email" && <span className="absolute right-0 px-1 py-2 bottom-1 bg-light-1">{editIcon}</span>}
+                    </li>
+                  );
+                })}
+                <Button intent="secondary" className="ms-auto">
+                  Save Changes
+                </Button>
+              </menu>
+            </form>
+          )}
         </div>
       </Container>
     </>

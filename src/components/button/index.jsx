@@ -39,6 +39,7 @@ const link = cva("link", {
 
 export const Button = ({ className, intent, size, ...props }) => (
   <button
+    aria-label="button-custom-style"
     className={`${button({
       intent,
       size,
@@ -50,6 +51,7 @@ export const Button = ({ className, intent, size, ...props }) => (
 
 export const Links = ({ className, intent, ...props }) => (
   <HashLink
+    aria-label="links"
     smooth
     className={`${link({
       intent,

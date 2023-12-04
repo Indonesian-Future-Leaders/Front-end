@@ -17,6 +17,7 @@ export const Icon = ({ className, size, src, ...props }) => (
   <img
     loading="lazy"
     src={src}
+    alt="icon"
     className={`${icon({
       size,
       className,

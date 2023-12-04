@@ -4,6 +4,7 @@ export default {
   theme: {
     extend: {
       minHeight: {
+        200: "200px",
         300: "300px",
         400: "400px",
         500: "500px",
@@ -18,7 +19,9 @@ export default {
         5: 5,
       },
       maxWidth: {
-        1124: "1124px",
+        200: "200px",
+        "container-1": "1120px",
+        "container-2": "992px",
       },
       colors: {
         "filter-1": "#0096C760",

@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { background_program_project, head_program } from "../../assets";
+import { background_program_project } from "../../assets";
 
 import Container from "../../components/container";
 import Image from "../../components/image";
@@ -17,7 +17,7 @@ const ProgramSection = () => {
   const itemsToDisplay = programList.slice(currentTab, lastIndex);
   return (
     <>
-      <Hero type="text" title={program.title} description={program.description} image={head_program} />
+      <Hero type="text" title={program.title} description={program.description} image={program.image} />
 
       <Image src={background_program_project} className="min-h-fit">
         <Container className="!my-4 text-center !mb-16">
