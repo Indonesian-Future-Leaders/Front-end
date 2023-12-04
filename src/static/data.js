@@ -1,4 +1,17 @@
-import { ACT, INITIATE, INSPIRE, image_ap, image_blog, image_gtg, image_iflta, image_program, image_project, image_wct, image_yq } from "../assets";
+import {
+  ACT,
+  INITIATE,
+  SHARE,
+  image_ap,
+  image_blog,
+  image_ctg,
+  image_gtg,
+  image_iflta,
+  image_program,
+  image_project,
+  image_wct,
+  image_yq,
+} from "../assets";
 import { gmail, instagram, linkedin, tiktok, youtube } from "../assets/icons";
 
 export const socialIconsList = [
@@ -16,17 +29,17 @@ export const pillarsActionList = [
   {
     icon: INITIATE,
     title: "Capacity Building",
-    desc: "IFL melaksanakan pembangunan kapasitas dan skills di berbagai bidang kepada anak muda di berbagai daerah di Indonesia.",
+    desc: "Melaksanakan pembangunan kapasitas dan skills di berbagai bidang kepada generasi muda.",
   },
   {
     icon: ACT,
     title: "Community Service",
-    desc: "IFL melakukan kegiatan-kegiatan sosial dan pemberdayaan masyarakat dengan harapan dapat memberikan dampak kepada masyarakat di akar rumput secara langsung.",
+    desc: "Memberikan dampak kepada lingkungan melalui kegiatan-kegiatan sosial dan pemberdayaan masyarakat.",
   },
   {
-    icon: INSPIRE,
+    icon: SHARE,
     title: "Promotion and Advocacy",
-    desc: "IFL percaya bahwa bergerak tanpa dukungan dari kebijakan pemerintah, perubahan holistik akan sulit untuk dicapai.",
+    desc: "Melakukan advokasi mengenai kebijakan-kebijakan yang terkait dengan generasi muda, kepada seluruh stakeholders terkait.",
   },
 ];
 
@@ -74,7 +87,7 @@ export const projectList = [
     desc: "Salah satu project dari Indonesian Future Leaders Chapter Malang yang memiliki fokus pada poin SDG nomor 10 (Reduced Inequalities). Berangkat dari adanya isu ketidaksetaraan, Close the Gap berfokus pada pemberdayaan kelompok masyarakat penyandang difabel yang bertujuan untuk menciptakan ruang inklusif serta untuk menghilangkan stigma negatif.",
     timeline: "Waktu pelaksanaan dilakukan pada satu waktu pada bulan Desember 2023.",
     target: "Target sasaran dari Project Close The Gap adalah kelompok masyarakat penyandang disabilitas di Malang Raya.",
-    image: image_project,
+    image: image_ctg,
   },
   {
     title: "Grow Them Great",

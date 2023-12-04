@@ -1,4 +1,4 @@
-import { AppWindow, ProjectorScreenChart, Users } from "@phosphor-icons/react";
+import { BookOpenText, NewspaperClipping, Users } from "@phosphor-icons/react";
 
 import { Button } from "../../components/button";
 import Container from "../../components/container";
@@ -7,18 +7,18 @@ import { Link } from "react-router-dom";
 const dataList = [
   {
     icon: <Users weight="bold" size={32} />,
-    title: "50+",
-    desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, aperiam? Lorem ipsum dolor sit amet.",
+    title: "400+",
+    desc: "Jumlah alumni dan anggota IFL Chapter Malang dari awal berdiri sampai sekarang.",
   },
   {
-    icon: <ProjectorScreenChart weight="bold" size={32} />,
-    title: "30",
-    desc: "Cum culpa eos debitis et laborum esse placeat saepe magni amet ab! Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, ipsam.",
+    icon: <NewspaperClipping weight="bold" size={32} />,
+    title: "70+",
+    desc: "Jumlah pihak yang sudah diberdayakan oleh IFL Chapter Malang dari awal berdiri sampai sekarang terdiri dari individu, komunitas, sekolah, dan lembaga.",
   },
   {
-    icon: <AppWindow weight="bold" size={32} />,
-    title: "20+",
-    desc: "Distinctio architecto illo error aut vero illum, aspernatur dolor. Lorem ipsum dolo sit amet consectetur adipisicing elit.",
+    icon: <BookOpenText weight="bold" size={32} />,
+    title: "10",
+    desc: "Nilai SDGs yang dilakukan dari awal berdiri sampai sekarang.",
   },
 ];
 

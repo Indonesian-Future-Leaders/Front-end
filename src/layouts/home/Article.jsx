@@ -31,7 +31,7 @@ const Article = () => {
                     <h1 className="text-xl font-bold">{category}</h1>
                     <p className="text-sm font-medium">{heading}</p>
                   </div>
-                  <Image src={image} className="max-w-[200px] min-h-[150px]" />
+                  <Image src={image} className="max-w-100 md:max-w-200 w-full min-h-fit" />
                 </Link>
               );
             })}

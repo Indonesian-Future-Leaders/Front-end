@@ -11,10 +11,9 @@ const Hero = () => {
     <Image src={image_iflta} className="min-h-400 sm:min-h-500 md:min-h-700">
       <Filter intent="primary" />
       <Container className="space-y-6 z-1 !my-8 md:!my-16 text-light-1">
-        <h1 className="text-2xl font-semibold sm:text-4xl md:text-6xl">Lorem Ipsum is simply dummy text of the printing and typesetting industry</h1>
+        <h1 className="text-2xl font-semibold sm:text-4xl md:text-6xl">Empower change with a small act of kindness</h1>
         <p className="text-lg font-medium leading-relaxed sm:text-xl md:text-2xl">
-          Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
+          Your donation can make a big difference. Join us in making a positive impact. Every contribution counts!
         </p>
         <Link to="/donate" className="block" aria-label="navigate-donate">
           <Button intent="outlineTransparent" size="large">

@@ -40,7 +40,7 @@ const donateList = [
 ];
 
 const desc =
-  "Culpa dolor a qui quibusdam, delectus, similique sint deleniti labore molestias asperiores numquam obcaecati corporis, officiis impedit sit mollitia praesentium consequuntur sapiente consectetur ullam? Omnis tempore eos ullam reprehenderit sed unde. Quas quasi rerum voluptatem incidunt et dignissimos delectus aperiam voluptatum maiores.";
+  "Donating is not merely a transaction; it's a profound impact we can create by extending a helping hand to those in need. It has power to bring warmth to the hearts of those facing adversity";
 
 const iconPayment = [BRI, BSI, BNI, Mandiri, BCA, gopay, flip, shopeepay, dana, ovo];
 

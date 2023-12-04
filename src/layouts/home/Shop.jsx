@@ -15,13 +15,12 @@ const Shop = () => {
   return (
     <Image src={image_tumbler} className="relative" id="shop">
       <Filter intent="primary" />
-      <Container className="flex flex-col md:flex-row gap-8 z-1 text-light-1">
-        <Image src={image_tumbler} className="flex-1 min-h-300" />
-        <div className="flex flex-col flex-1 max-w-full gap-8 justify-evenly lg:max-w-md">
-          <h1 className="text-2xl md:text-3xl font-bold">Buy & Donate</h1>
-          <p className="font-medium text-lg">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis voluptatum architecto sapiente quas totam nihil ex voluptatibus labore
-            odit vitae
+      <Container className="flex flex-col md:flex-row gap-8 md:gap-16 z-1 text-light-1">
+        <Image src={image_tumbler} className="flex-1 min-h-300 max-w-md" />
+        <div className="flex flex-col flex-1 max-w-full gap-8 justify-evenly lg:max-w-lg">
+          <h1 className="text-2xl md:text-4xl font-bold">Buy & Donate</h1>
+          <p className="font-semibold text-xl">
+            Penjualan merch dari IFL Chapter Malang yang 100% keuntungan akan diberikan untuk charity melalui Program-Project IFL Chapter Malang.
           </p>
           <div className="flex flex-wrap gap-4">
             {iconsList.map((item, index) => (

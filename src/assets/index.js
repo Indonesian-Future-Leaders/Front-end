@@ -1,12 +1,14 @@
 import ACT from "./image/ACT.webp";
 import INITIATE from "./image/INITIATE.webp";
-import INSPIRE from "./image/INSPIRE.webp";
+import SHARE from "./image/SHARE.webp";
+
 import background_login_register from "./image/background-login.webp";
 import background_program_project from "./image/background-program.webp";
 import article from "./image/article.webp";
 import image_tumbler from "./image/tumbler-pic.webp";
 import image_blog from "./image/blog-pic.webp";
 import image_donation from "./image/donation-pic.webp";
+import image_ctg from "./image/project-ctg.webp";
 import image_iflta from "./image/project-iflta.webp";
 import image_yq from "./image/project-yq.webp";
 import image_gtg from "./image/project-gtg.webp";
@@ -34,15 +36,16 @@ export {
   image_blog,
   image_donation,
   image_iflta,
+  image_ctg,
   image_ap,
   image_yq,
   image_gtg,
+  image_wct,
   image_project,
   image_program,
-  image_wct,
   ACT,
   INITIATE,
-  INSPIRE,
+  SHARE,
   imam_usman,
   andhyta,
   niwa,

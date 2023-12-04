@@ -26,14 +26,14 @@ const ProgramSection = () => {
             {itemsToDisplay.map((item, index) => (
               <div key={index} className="space-y-8 text-dark-1">
                 <h1 className="text-5xl font-bold tracking-wide">{item.title}</h1>
-                <Image src={item.image} className="max-w-screen-md mx-auto min-h-500" />
-                <p className="text-xl leading-relaxed text-justify">{item.desc}</p>
+                <Image src={item.image} className="max-w-screen-md mx-auto min-h-300 sm:min-h-500" />
+                <p className="text-base sm:text-xl leading-relaxed text-justify">{item.desc}</p>
                 <menu className="space-y-2">
-                  <p className="text-xl leading-relaxed text-justify">
+                  <p className="text-base sm:text-xl leading-relaxed text-justify">
                     <strong>Waktu Pelaksanaan: </strong>
                     {item.timeline}
                   </p>
-                  <p className="text-xl leading-relaxed text-justify">
+                  <p className="text-base sm:text-xl leading-relaxed text-justify">
                     <strong>Target Sasaran: </strong>
                     {item.target}
                   </p>
