@@ -6,22 +6,20 @@ html {
   scroll-behavior: smooth;
 }
 
+/* colored sweet alert */
 .colored-toast.swal2-icon-success {
   background-color: #a5dc86 !important;
 }
-
 .colored-toast.swal2-icon-error {
   background-color: #f27474 !important;
 }
 
-/* Chrome, Safari, Edge, Opera */
+/* delete arrow in number input */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
-/* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
 }

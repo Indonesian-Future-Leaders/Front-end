@@ -4,6 +4,9 @@ const Image = ({ className, src, children, ...props }) => {
   return (
     <LazyMotion features={domAnimation}>
       <m.figure
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ opacity: { duration: 0.4 } }}
         style={{
           backgroundImage: `url(${src})`,
         }}

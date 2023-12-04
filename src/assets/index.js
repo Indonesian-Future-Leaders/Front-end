@@ -17,9 +17,7 @@ import image_ap from "./image/program-ap.webp";
 import imam_usman from "./image/imam-usman.webp";
 import andhyta from "./image/andhyta.webp";
 import niwa from "./image/niwa.webp";
-
-import image_comsoon from "./image/image-coming-soon.png";
-
+import image_comsoon from "./image/image-coming-soon.webp";
 import raising_awareness_cfd from "./temp/raising-awareness-cfd.webp";
 import charity_cfd from "./temp/charity-cfd.webp";
 import booth_gypsum from "./temp/booth-gypsum.webp";
