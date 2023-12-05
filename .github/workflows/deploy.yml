@@ -21,11 +21,3 @@ jobs:
         run: |
           npm install
           npm run build
-
-      - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: nsp1.rumahweb.com
-          username: ifln3579
-          password: 8qIenafCTc0htLXUvWZ5
-          # local-dir: ./build/
