@@ -41,7 +41,7 @@ const Data = () => {
       <menu className="flex-1 space-y-4 sm:space-y-8">
         {dataList.map((item, index) => (
           <li key={index} className="flex gap-2 sm:gap-4 align-items-start">
-            <i className="block mt-1 text-primary-1">{item.icon}</i>
+            <i className="block text-primary-1">{item.icon}</i>
             <div className="space-y-2">
               <h1 className="text-xl font-semibold sm:text-3xl text-primary-1">{item.title}</h1>
               <p className="text-base font-normal sm:text-lg">{item.desc}</p>
