@@ -1,7 +1,7 @@
 {
   "name": "website-ifl",
   "private": true,
-  "version": "1.0.2",
+  "version": "0.0.0",
   "homepage": "https://www.iflmalang.org/",
   "type": "module",
   "scripts": {
