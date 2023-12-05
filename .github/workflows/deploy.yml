@@ -25,7 +25,7 @@ jobs:
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: nsp3.rumahweb.net
+          server: nsp1.rumahweb.com
           username: ifln3579
           password: 8qIenafCTc0htLXUvWZ5
           # local-dir: ./build/
