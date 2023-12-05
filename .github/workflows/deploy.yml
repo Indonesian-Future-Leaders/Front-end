@@ -28,4 +28,4 @@ jobs:
           server: ifln3579
           username: nsp3.rumahweb.net
           password: 8qIenafCTc0htLXUvWZ5
-          local-dir: ./build/
+          # local-dir: ./build/
