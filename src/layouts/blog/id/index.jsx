@@ -29,11 +29,7 @@ const SingleBlog = ({ id, heading, author, image, description, topic, conclusion
               <h1 className="text-2xl font-bold tracking-wide">{subheading}</h1>
               <div className={`flex gap-4 md:flex-row flex-col-reverse ${index % 2 !== 0 && "flex-col md:flex-row-reverse"}`}>
                 <p className="flex-1">{description[0]}</p>
-<<<<<<< HEAD
-                <Image src={image} className="flex-1 w-full max-w-full md:max-w-sm min-h-200 md:min-h-fit" />
-=======
                 <Image src={image} className="flex-1 w-full md:w-96" description={subheading} />
->>>>>>> 7b9098b190604f11c817c013f31a26b42235d565
               </div>
               <p>{descSlice}</p>
             </div>
