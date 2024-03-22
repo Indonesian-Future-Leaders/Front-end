@@ -9,11 +9,7 @@ import Background from "../../components/background";
 
 const Hero = () => {
   return (
-<<<<<<< HEAD
-    <Image src={image_iflta} className="min-h-400 sm:min-h-500 md:min-h-custom-header">
-=======
     <Background src={image_iflta} className="min-h-400 sm:min-h-500 md:min-h-custom-header">
->>>>>>> 7b9098b190604f11c817c013f31a26b42235d565
       <Filter intent="primary" />
       <Container className="space-y-6 z-1 !my-8 md:!my-16 text-light-1">
         <h1 className="text-2xl font-bold sm:text-3xl md:text-5xl">Empower change with a small act of kindness</h1>
