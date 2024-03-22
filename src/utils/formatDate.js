@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 const formatDate = (value) => {
   if (!value) {
     return;
-=======
-export const formatDate = (value) => {
-  if (!value) {
-    return "";
->>>>>>> 7b9098b190604f11c817c013f31a26b42235d565
   }
   const date = new Date(value);
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
