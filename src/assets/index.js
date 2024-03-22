@@ -20,6 +20,10 @@ import imam_usman from "./image/imam-usman.webp";
 import andhyta from "./image/andhyta.webp";
 import niwa from "./image/niwa.webp";
 import image_comsoon from "./image/image-coming-soon.webp";
+import default_background_profile from "./image/default-background-profile.webp";
+import default_user_profile from "./image/default-user-profile.webp";
+import upload_photo from "./image/image-upload-photo.webp";
+
 import raising_awareness_cfd from "./temp/raising-awareness-cfd.webp";
 import charity_cfd from "./temp/charity-cfd.webp";
 import booth_gypsum from "./temp/booth-gypsum.webp";
@@ -30,6 +34,7 @@ import webinar_wct from "./temp/webinar-wct.webp";
 export {
   background_login_register,
   background_program_project,
+  upload_photo,
   article,
   image_comsoon,
   image_tumbler,
@@ -43,6 +48,8 @@ export {
   image_wct,
   image_project,
   image_program,
+  default_background_profile,
+  default_user_profile,
   ACT,
   INITIATE,
   SHARE,

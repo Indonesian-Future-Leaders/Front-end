@@ -2,17 +2,17 @@ import * as React from "react";
 
 import { Link } from "react-router-dom";
 
-// import { useGetProfile } from "../../features/profile";
-// import { useLogout } from "../../features/authentication";
+import { useGetProfile } from "../../features/profile";
+import { useLogout } from "../../features/authentication";
 
-import { LazyMotion, m, domAnimation } from "framer-motion";
+import { CloseMenu } from "../../utils/closeMenu";
 
 import { CaretDown, List, X } from "@phosphor-icons/react";
 
-import { logotext } from "../../assets/icons";
+import { logo_text } from "../../assets/icons";
 import { Button, Links } from "../button";
-import { Icon } from "../icon";
-// import Loading from "../loader";
+import Icon from "../icon";
+import Loading from "../loader";
 
 const navList = [
   { title: "About Us", path: "/about" },
@@ -22,7 +22,7 @@ const navList = [
 
 const eventsDropdown = (
   <li className="relative group">
-    <Button intent="navigation" className="!px-0 !shadow-none gap-1">
+    <Button intent="navigation" className="!p-0 !shadow-none gap-1">
       Events <CaretDown size={16} className="mt-1 transition-all group-hover:rotate-180" />
     </Button>
     <div className="dropdown_content">
@@ -41,48 +41,54 @@ const eventsDropdown = (
   </li>
 );
 
-// const EventsClickDropdown = ({ data, isPopoverOpen, handleLogout, setPopoverOpen, isPending }) => {
-//   return (
-//     <li className="relative">
-//       <Button onClick={() => setPopoverOpen((prevState) => !prevState)} size="medium">
-//         {data?.username} <CaretDown size={16} className={`ml-1 transition-all ${isPopoverOpen && "rotate-180"}`} />
-//       </Button>
-//       {isPopoverOpen && (
-//         <div className="absolute flex flex-col gap-2 p-4 -translate-x-1/2 rounded-md top-12 left-1/2 bg-light-1 text-primary-1 z-1">
-//           {isPending ? (
-//             <Loading height={50} width={50} />
-//           ) : (
-//             <>
-//               <Link to={`/profile/${data?.id}`} aria-label="navigate-profile">
-//                 <Button intent="outline" size="small" className="!w-full !rounded !px-6">
-//                   Profile
-//                 </Button>
-//               </Link>
-//               <Button onClick={handleLogout} intent="outline" size="small" className="!w-full !rounded !px-6">
-//                 Logout
-//               </Button>
-//             </>
-//           )}
-//         </div>
-//       )}
-//     </li>
-//   );
-// };
+const EventsClickDropdown = ({ data, isPopoverOpen, handleLogout, setPopoverOpen, isPending }) => {
+  const dropdownRef = React.useRef(null);
+  CloseMenu({ setPopoverOpen, dropdownRef });
+
+  return (
+    <li ref={dropdownRef} className="relative">
+      <Button onClick={() => setPopoverOpen(!isPopoverOpen)} size="medium">
+        {data?.username} <CaretDown size={16} className={`ml-1 transition-all ${isPopoverOpen && "rotate-180"}`} />
+      </Button>
+      {isPopoverOpen && (
+        <div className="popover !top-12">
+          {isPending ? (
+            <Loading height={50} width={50} />
+          ) : (
+            <div className="space-y-2">
+              <Links className="!px-4" to={`/profile/${data?.id}`} intent="dropdown" aria-label="navigate-profile">
+                Profile
+              </Links>
+              {data?.role === "admin" && (
+                <Links className="!px-4" to={`/dashboards?${data?.id}`} intent="dropdown" aria-label="navigate-profile">
+                  Dashboard
+                </Links>
+              )}
+              <Button className="!px-4" onClick={handleLogout} intent="logout" size="small">
+                Logout
+              </Button>
+            </div>
+          )}
+        </div>
+      )}
+    </li>
+  );
+};
 
 const Navbar = () => {
   const [openNav, setOpenNav] = React.useState(false);
-  // const [isPopoverOpen, setPopoverOpen] = React.useState(false);
+  const [isPopoverOpen, setPopoverOpen] = React.useState(false);
 
   const navbarRef = React.useRef(null);
 
-  // const { data } = useGetProfile();
+  const { data } = useGetProfile();
 
-  // const { mutate, isPending } = useLogout();
+  const { mutate, isPending } = useLogout();
 
-  // const handleLogout = (e) => {
-  //   e.preventDefault();
-  //   mutate();
-  // };
+  const handleLogout = (e) => {
+    e.preventDefault();
+    mutate();
+  };
 
   React.useEffect(() => {
     if (navbarRef.current == null) return;
@@ -91,8 +97,8 @@ const Navbar = () => {
       const container = entries[0]?.target;
       if (container == null) return;
 
-      setOpenNav(container.clientWidth > 751);
-      // setPopoverOpen(container.clientWidth > 100000);
+      setOpenNav(container.clientWidth > 853);
+      setPopoverOpen(container.clientWidth > 100000);
       console.log();
     });
     observer.observe(navbarRef.current);
@@ -103,45 +109,43 @@ const Navbar = () => {
   }, []);
 
   return (
-    <LazyMotion features={domAnimation}>
-      <m.nav className="navbar" ref={navbarRef}>
-        <menu className="navbar_child">
-          <Link to="/" className="z-30 block cursor-pointer" aria-label="navigate-root-page">
-            <Icon src={logotext} size="logo" />
-          </Link>
+    <nav className="navbar" ref={navbarRef}>
+      <menu className="navbar_child">
+        <Link to="/" className="z-30 block cursor-pointer" aria-label="navigate-root-page">
+          <Icon src={logo_text} size="logo" description="logo-ifl" />
+        </Link>
 
-          <Button size="small" className="z-20 md:hidden" onClick={() => setOpenNav(!openNav)}>
-            {openNav ? <X size={36} /> : <List size={36} />}
-          </Button>
+        <Button size="small" className="z-20 md:hidden" onClick={() => setOpenNav(!openNav)}>
+          {openNav ? <X size={36} /> : <List size={36} />}
+        </Button>
 
-          <ul className={`navbar_field ${openNav ? "left-0" : "left-[-200%]"}`}>
-            {eventsDropdown}
+        <ul className={`navbar_field ${openNav ? "left-0" : "left-[-200%]"}`}>
+          {eventsDropdown}
 
-            {navList.map((item, index) => (
-              <li key={index}>
-                <Links to={item.path} intent="navigation">
-                  {item.title}
-                </Links>
-              </li>
-            ))}
+          {navList.map((item, index) => (
+            <li key={index} className="transition-all duration-300 scale-100 hover:scale-110">
+              <Links to={item.path} intent="navigation">
+                {item.title}
+              </Links>
+            </li>
+          ))}
 
-            {/* {data ? (
-              <EventsClickDropdown
-                data={data}
-                isPopoverOpen={isPopoverOpen}
-                handleLogout={handleLogout}
-                setPopoverOpen={setPopoverOpen}
-                isPending={isPending}
-              />
-            ) : (
-              <Link to="/login" aria-label="navigate-sign-in">
-                <Button size="medium">SIGN IN</Button>
-              </Link>
-            )} */}
-          </ul>
-        </menu>
-      </m.nav>
-    </LazyMotion>
+          {data ? (
+            <EventsClickDropdown
+              data={data}
+              isPopoverOpen={isPopoverOpen}
+              handleLogout={handleLogout}
+              setPopoverOpen={setPopoverOpen}
+              isPending={isPending}
+            />
+          ) : (
+            <Link to="/login" aria-label="navigate-sign-in">
+              <Button size="medium">SIGN IN</Button>
+            </Link>
+          )}
+        </ul>
+      </menu>
+    </nav>
   );
 };
 

@@ -1,4 +1,5 @@
 import API from "../../../libs/api";
+import reloadPage from "../../../utils/reloadPage";
 import SweatAlert from "../../../utils/sweet-alert";
 
 const MESSAGE_TEMPLATE = "There was an error in authentication, please try again";
@@ -7,6 +8,7 @@ export const register = async (body) => {
   return await API.post("/auth/register", body)
     .then((response) => {
       SweatAlert(response.data?.message, "success");
+      reloadPage(2200, `/verify?mail=${response.data?.data?.email}`);
     })
     .catch((error) => {
       const { email, username, password, detail } = error.response.data.error;
@@ -27,12 +29,9 @@ export const login = async (body) => {
       localStorage.setItem("token", response.data?.data?.token?.token?.access_token);
       SweatAlert(response.data?.message, "success");
 
-      setTimeout(() => {
-        window.location.href = `/`;
-      }, 2200);
+      reloadPage(2200, "/");
     })
     .catch((error) => {
-      console.log(error);
       const message = error.response?.data?.error_detail || MESSAGE_TEMPLATE;
       SweatAlert(message, "error");
     });
@@ -58,9 +57,7 @@ export const logout = async () => {
     .then((response) => {
       SweatAlert(response.data?.message, "success");
       localStorage.clear();
-      setTimeout(() => {
-        window.location.href = `/login`;
-      }, 2200);
+      reloadPage(2200, "/");
     })
     .catch((error) => {
       const message = error.response?.data?.error_detail || MESSAGE_TEMPLATE;
@@ -85,7 +82,7 @@ export const resetPassword = async (body) => {
       SweatAlert(`${response.data?.message} and go back to main page`, "success");
     })
     .catch((error) => {
-      const message = error.response?.data?.error;
+      const message = error.response?.data?.message;
       SweatAlert(message, "error");
     });
 };
@@ -107,6 +104,18 @@ export const loginWithGoogle = async () => {
   return await API.get("/auth/google")
     .then((response) => {
       return response.data?.auth_url;
+    })
+    .catch(() => {
+      SweatAlert(MESSAGE_TEMPLATE, "error");
+    });
+};
+
+export const googleCallback = async (code) => {
+  return await API.get(`/auth/google/callback?code=${code}`)
+    .then((response) => {
+      localStorage.setItem("token", response.data?.data?.token?.access_token);
+      SweatAlert(response.data?.message, "success");
+      return response.data?.data;
     })
     .catch(() => {
       SweatAlert(MESSAGE_TEMPLATE, "error");

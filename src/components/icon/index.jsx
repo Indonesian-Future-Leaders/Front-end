@@ -3,21 +3,22 @@ import { cva } from "class-variance-authority";
 const icon = cva("icon", {
   variants: {
     size: {
-      medium: "w-4 h-4 sm:h-6 sm:w-6",
-      large: "w-12 h-8 sm:w-14 sm:h-10",
+      small: "w-6 h-6 sm:h-8 sm:w-8",
+      medium: "w-8 h-8 sm:h-10 sm:w-10",
+      large: "w-10 h-10 sm:w-12 sm:h-12",
       logo: "w-28 h-14 sm:w-32 sm:h-16",
     },
   },
   defaultVariants: {
-    size: "medium",
+    size: "small",
   },
 });
 
-export const Icon = ({ className, size, src, ...props }) => (
+const Icon = ({ className, size, src, description, ...props }) => (
   <img
     loading="lazy"
     src={src}
-    alt="icon"
+    alt={`Icon ${description}`}
     className={`${icon({
       size,
       className,
@@ -25,3 +26,4 @@ export const Icon = ({ className, size, src, ...props }) => (
     {...props}
   />
 );
+export default Icon;

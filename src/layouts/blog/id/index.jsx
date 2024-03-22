@@ -1,42 +1,42 @@
 import Container from "../../../components/container";
 import Image from "../../../components/image";
-import formatDate from "../../../utils/formatDate";
+import { formatDate } from "../../../utils/formatDate";
 
 const SingleBlog = ({ id, heading, author, image, description, topic, conclusion, date }) => {
   return (
     <section key={id}>
       <Container className="!my-0 !mt-16">
-        <Image src={image} className="min-h-600" />
+        <Image src={image} className="w-full" description={heading} />
       </Container>
       <Container className="max-w-container-2 text-dark-1 leading-loose !mt-4">
-        <div className="space-y-6 border-b-4 border-b-gray-200 pb-4 mb-4 tracking-wide">
-          <h1 className="font-bold text-4xl">{heading}</h1>
-          <div className="flex justify-between">
-            <span className="font-bold text-lg">{author}</span>
-            <span className="text-gray-500 font-medium">{formatDate(date)}</span>
-          </div>
+        <div className="pb-4 mb-4 space-y-6 tracking-wide border-b-4 border-b-gray-200">
+          <h1 className="text-3xl font-bold md:text-4xl">{heading}</h1>
+          <menu className="flex justify-between">
+            <h1 className="text-lg font-bold">{author}</h1>
+            <p className="font-medium text-gray-500">{formatDate(date)}</p>
+          </menu>
         </div>
-        <div className="text-justify space-y-4">
-          {description.map((item, index) => (
+        <div className="space-y-4 text-justify">
+          {description?.map((item, index) => (
             <p key={index}>{item}</p>
           ))}
         </div>
         {topic?.map((item, index) => {
           const { subheading, description, image } = item;
-          const descSlice = description.slice(1, description.length);
+          const descSlice = description?.slice(1, description.length);
           return (
-            <div key={index} className="text-justify space-y-8 mt-8">
-              <h1 className="font-bold text-2xl tracking-wide">{subheading}</h1>
-              <div className={`flex gap-4 ${index % 2 !== 0 && "flex-row-reverse"}`}>
+            <div key={index} className="mt-8 space-y-8 text-justify">
+              <h1 className="text-2xl font-bold tracking-wide">{subheading}</h1>
+              <div className={`flex gap-4 md:flex-row flex-col-reverse ${index % 2 !== 0 && "flex-col md:flex-row-reverse"}`}>
                 <p className="flex-1">{description[0]}</p>
-                <Image src={image} className="flex-1 min-h-fit max-w-sm" />
+                <Image src={image} className="flex-1 w-full md:w-96" description={subheading} />
               </div>
               <p>{descSlice}</p>
             </div>
           );
         })}
-        <div className="text-justify space-y-4 mt-8">
-          <h1 className="font-bold text-2xl tracking-wide">Penutup</h1>
+        <div className="mt-8 space-y-4 text-justify">
+          <h1 className="text-2xl font-bold tracking-wide">Penutup</h1>
           <p>{conclusion}</p>
         </div>
       </Container>

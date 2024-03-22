@@ -1,21 +1,12 @@
-import { LazyMotion, domAnimation, m } from "framer-motion";
-import { background_login_register } from "../../assets";
-import { logotext } from "../../assets/icons";
-import Filter from "../filter";
-import { Icon } from "../icon";
-import Image from "../image";
-
-const Background = ({ children }) => {
+const Background = ({ className, src, children, ...props }) => {
   return (
-    <LazyMotion features={domAnimation}>
-      <m.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-        <Image src={background_login_register} className="min-h-screen !bg-bottom !justify-center p-4">
-          <Icon src={logotext} size="logo" className="z-1 absolute left-8 top-8 hidden md:block" />
-          <Filter intent="primary" />
-          {children}
-        </Image>
-      </m.section>
-    </LazyMotion>
+    <div
+      style={{ backgroundImage: `url(${src})` }}
+      className={`${className ?? ""} w-full bg-cover bg-no-repeat bg-center flex flex-col items-center justify-end relative overflow-hidden`}
+      {...props}
+    >
+      {children}
+    </div>
   );
 };
 

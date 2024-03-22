@@ -1,32 +1,33 @@
-import { useEffect } from "react";
+import * as React from "react";
 
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 
-// import { jwtDecode } from "jwt-decode";
+// root page
+import { HomePage, AboutPage, ProgramPage, ProjectPage, SingleBlogPage, ProfilePage, SingleDonationPage, PaymentDonatePage } from "./page/root";
 
-// import { SweatAlertWithContent } from "./utils/sweet-alert";
+// dashboard page
+import { DashboardPage, DonationHistory, DonationPage, SoonDashboardPage, UserPage } from "./page/dashboard";
 
-import Home from "./page/Home";
-import Program from "./page/Program";
-import Project from "./page/Project";
-import About from "./page/About";
-// import Blog from "./page/Blog";
-// import Donate from "./page/Donate";
+// authentication page
+import { GoogleCallbackPage, ResetPasswordPage } from "./page/auth";
+const LoginPage = React.lazy(() => import("./page/auth/LoginPage"));
+const RegisterPage = React.lazy(() => import("./page/auth/RegisterPage"));
+const ForgotPasswordPage = React.lazy(() => import("./page/auth/ForgotPasswordPage"));
+const VerifyPage = React.lazy(() => import("./page/auth/VerifyPage"));
+import AuthBackground from "./components/skeleton/AuthBackground";
+
+//error page
 import ComingSoon from "./page/ComingSoon";
 import NotFoundPage from "./page/NotFoundPage";
-import SingleBlogPage from "./page/SingleBlogPage";
-// import LoginPage from "./page/LoginPage";
-// import RegisterPage from "./page/RegisterPage";
-// import Profile from "./page/Profile";
-// import VerifyPage from "./page/VerifyPage";
-// import ForgotPasswordPage from "./page/ForgotPasswordPage";
-// import ResetPasswordPage from "./page/ResetPasswordPage";
-// import ProtectedToken from "./routes/ProtectedToken";
+
+import ProtectedToken from "./routes/ProtectedToken";
+
+import DonatePage from "./page/root/DonatePage";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
-  useEffect(() => {
+  React.useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
@@ -34,50 +35,71 @@ const ScrollToTop = () => {
 };
 
 const App = () => {
-  // const token = localStorage.getItem("token");
-  // const isTokenExpired = (token) => {
-  //   const decoded = jwtDecode(token);
-
-  //   const currentTime = Date.now().valueOf() / 1000;
-
-  //   if (currentTime > decoded.exp) {
-  //     return true;
-  //   }
-
-  //   return false;
-  // };
-
-  // useEffect(() => {
-  //   if (token) {
-  //     const isExp = isTokenExpired(token);
-  //     if (isExp) {
-  //       SweatAlertWithContent("Your session is about to time out. Do you want to extend your current session?");
-  //     }
-  //   }
-  // }, [token]);
-
   return (
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/program" element={<Program />} />
-        <Route path="/project" element={<Project />} />
-        <Route path="/about" element={<About />} />
-        {/* <Route path="/blog" element={<Blog />} /> */}
-        <Route path="/donate" element={<ComingSoon />} />
-
+        <Route exact path="/" element={<HomePage />} />
+        <Route path="/program" element={<ProgramPage />} />
+        <Route path="/project" element={<ProjectPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/donate" element={<DonatePage />} />
         <Route path="/blog/:id" element={<SingleBlogPage />} />
-        {/* <Route element={<ProtectedToken />}>
-          <Route path="/profile/:id" element={<Profile />} />
+        <Route path="/donate/:id" element={<SingleDonationPage />} />
+        <Route path="/donate/:id/payment" element={<PaymentDonatePage />} />
+
+        <Route element={<ProtectedToken />}>
+          <Route path="/profile/:id" element={<ProfilePage />} />
+
+          <Route path="/dashboards" element={<DashboardPage />} />
+
+          <Route path="/dashboard/user" element={<UserPage />} />
+
+          <Route path="/dashboard/blog" element={<SoonDashboardPage />} />
+          <Route path="/dashboard/blog/add" element={<SoonDashboardPage />} />
+
+          <Route path="/dashboard/product" element={<SoonDashboardPage />} />
+
+          <Route path="/dashboard/order-list" element={<SoonDashboardPage />} />
+
+          <Route path="/dashboard/donation" element={<DonationPage />} />
+          <Route path="/dashboard/donation/:id" element={<DonationHistory />} />
         </Route>
 
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-
-        <Route path="/verify" element={<VerifyPage />} />
-        <Route path="/reset-password" element={<ResetPasswordPage />} /> */}
+        <Route
+          path="/login"
+          element={
+            <React.Suspense fallback={AuthBackground}>
+              <LoginPage />
+            </React.Suspense>
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <React.Suspense fallback={AuthBackground}>
+              <RegisterPage />
+            </React.Suspense>
+          }
+        />
+        <Route
+          path="/forgot-password"
+          element={
+            <React.Suspense fallback={AuthBackground}>
+              <ForgotPasswordPage />
+            </React.Suspense>
+          }
+        />
+        <Route
+          path="/verify"
+          element={
+            <React.Suspense fallback={AuthBackground}>
+              <VerifyPage />
+            </React.Suspense>
+          }
+        />
+        <Route path="/auth/google" element={<GoogleCallbackPage />} />
+        <Route path="/reset-password" element={<ResetPasswordPage />} />
 
         <Route path="/coming-soon" element={<ComingSoon />} />
         <Route path="*" element={<NotFoundPage />} />

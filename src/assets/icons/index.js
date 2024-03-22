@@ -1,4 +1,4 @@
-import logotext from "./Logo-IFL-Text.svg";
+import logo_text from "./Logo-IFL-Text.svg";
 import message from "./message.svg";
 
 import tokopedia from "./Tokopedia.svg";
@@ -21,7 +21,15 @@ import BNI from "./BNI.svg";
 import Mandiri from "./Mandiri.svg";
 import BCA from "./BCA.svg";
 
+import user_heart from "./user-heart.svg";
+
+import users from "./users.svg";
+import orders from "./orders.svg";
+import donations from "./donations.svg";
+import canceled from "./canceled.svg";
+
 export {
+  user_heart,
   message,
   shopeepay,
   flip,
@@ -33,7 +41,7 @@ export {
   BNI,
   Mandiri,
   BCA,
-  logotext,
+  logo_text,
   gmail,
   tokopedia,
   shopee,
@@ -42,4 +50,8 @@ export {
   google,
   youtube,
   tiktok,
+  users,
+  orders,
+  donations,
+  canceled,
 };

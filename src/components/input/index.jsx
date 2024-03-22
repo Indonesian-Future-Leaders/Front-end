@@ -20,6 +20,7 @@ const InputField = ({ type, title, name, placeholder, register, icon }) => {
         })}
         type={type}
         id={name}
+        autoComplete="off"
         className="input_form"
         placeholder={placeholder}
         required

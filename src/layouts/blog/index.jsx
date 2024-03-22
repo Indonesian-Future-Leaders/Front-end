@@ -62,12 +62,12 @@ const BlogSection = () => {
           {filteredItems.map((item, index) => (
             <Card
               key={index}
-              className="cursor-pointer hover:scale-105 duration-300"
+              className="duration-300 cursor-pointer hover:scale-105"
               keys={item}
               path={item.image}
               category={item.category}
               title={item.title}
-              desc={item.desc}
+              description={item.desc}
               type="blog"
             />
           ))}
