@@ -1,5 +1,5 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { forgotPassword, login, loginWithGoogle, logout, register, resend, resetPassword } from "../hooks";
+import { forgotPassword, googleCallback, login, loginWithGoogle, logout, register, resend, resetPassword } from "../hooks";
 
 export const useRegistration = () => {
   return useMutation({
@@ -61,6 +61,16 @@ export const useLoginGoogle = () => {
     queryFn: async () => {
       const responseLoginWithGoogle = await loginWithGoogle();
       return responseLoginWithGoogle || "";
+    },
+  });
+};
+
+export const useGoogleCallback = (code) => {
+  return useQuery({
+    queryKey: ["getGoogleCallback", code],
+    queryFn: async () => {
+      const responseGoogleCallback = await googleCallback(code);
+      return responseGoogleCallback || "";
     },
   });
 };

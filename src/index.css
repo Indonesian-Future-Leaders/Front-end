@@ -24,6 +24,33 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+/* sidebar dashboard */
+.sidebar::-webkit-scrollbar {
+  width: 7px;
+}
+.sidebar::-webkit-scrollbar-track {
+  background: #0096c760;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background: #0096c7;
+}
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #0077b6;
+}
+
+.customModal {
+  border-radius: 12px;
+}
+
+.customModalUser {
+  border-radius: 8px;
+  padding: 0 !important;
+}
+
+.react-select__value-container {
+  padding: 0 !important;
+}
+
 @layer components {
   .navbar {
     @apply sticky top-0 z-20 block w-full py-4 shadow-md bg-primary-1 text-light-1;
@@ -32,7 +59,7 @@ input[type="number"] {
     @apply relative flex items-center justify-between w-full px-4 md:px-8 lg:px-12;
   }
   .navbar_field {
-    @apply absolute top-0 z-10 flex flex-col items-center justify-center w-full h-screen gap-8 transition-all duration-300 ease-in bg-primary-1 md:flex-row md:static md:w-auto md:h-auto;
+    @apply absolute top-0 z-10 flex flex-col items-center justify-center w-full h-screen gap-6 transition-all duration-300 ease-in md:gap-4 lg:gap-8 bg-primary-1 md:flex-row md:static md:w-auto md:h-auto;
   }
   .social_icon {
     @apply p-2 duration-300 border-2 rounded-full text-light-1 border-light-1 hover:text-primary-1 hover:bg-light-1;
@@ -41,7 +68,7 @@ input[type="number"] {
     @apply flex items-center gap-1 text-sm sm:text-base sm:gap-2 text-light-1;
   }
   .card {
-    @apply flex flex-col justify-between max-w-sm gap-2 p-4 border rounded-md shadow-lg text-dark-1;
+    @apply flex flex-col justify-between w-full max-w-sm gap-2 p-4 duration-300 border rounded-md shadow-lg text-dark-1 bg-light-1;
   }
   .left_arrow_slider {
     @apply absolute left-0 top-1/2 -translate-y-1/2 bg-gradient-to-r from-white from-65% to-transparent w-12 h-full flex items-center justify-start;
@@ -50,21 +77,33 @@ input[type="number"] {
     @apply absolute z-1 right-0 top-1/2 -translate-y-1/2 bg-gradient-to-l from-white from-65% to-transparent w-12 h-full flex items-center justify-end;
   }
   .dropdown_content {
-    @apply absolute flex-col hidden gap-2 p-4 -translate-x-1/2 rounded-md top-10 left-1/2 bg-light-1 text-primary-1 group-hover:flex z-1;
+    @apply absolute flex-col hidden gap-2 p-4 -translate-x-1/2 rounded-md top-8 left-1/2 bg-light-1 text-primary-1 group-hover:flex z-1;
   }
   .card_form {
-    @apply w-full max-w-sm mx-auto p-4 border border-gray-200 shadow-lg rounded-3xl bg-light-1 z-1 sm:p-6 md:p-8;
+    @apply w-full max-w-sm p-4 mx-auto border border-gray-200 shadow-lg rounded-3xl text-dark-1 bg-light-1 z-1 sm:p-6 md:p-8;
   }
   .input_form {
-    @apply w-full p-2 px-8 text-sm transition-all border-b-2 outline-none border-b-dark-fade focus:border-b-primary-1 text-dark-1;
+    @apply w-full px-8 py-2 text-sm transition-all border-b-2 outline-none border-b-dark-fade focus:border-b-primary-1 text-dark-1;
   }
   .button {
-    @apply transition-all duration-300 shadow-sm font-semibold cursor-pointer w-max relative flex items-center justify-center;
+    @apply relative flex items-center justify-center font-semibold transition-all duration-300 shadow-sm cursor-pointer w-max;
   }
   .link {
-    @apply text-base md:text-lg transition-all duration-300 font-semibold cursor-pointer w-max relative;
+    @apply relative block text-base font-semibold transition-all duration-300 cursor-pointer lg:text-lg w-max;
   }
   .container_profile_section {
-    @apply flex flex-col items-center !max-w-container-2 gap-8 sm:gap-4 md:gap-20 sm:flex-row h-fit md:min-h-500;
+    @apply flex flex-col text-dark-1 !max-w-container-2 gap-8 sm:gap-4 md:gap-20 sm:flex-row h-fit md:min-h-500;
+  }
+  .sidebar-link {
+    @apply flex text-base items-center px-4 gap-5 text-light-1 pt-3 pb-2.5 rounded-lg my-2;
+  }
+  .popover {
+    @apply absolute right-0 p-4 space-y-2 border rounded-md shadow-md w-36 top-10 bg-light-1 text-primary-1 z-1;
+  }
+  .events_dropdown {
+    @apply relative flex items-center gap-2 p-2 text-sm font-semibold uppercase cursor-pointer w-52 sm:px-4 sm:gap-8;
+  }
+  .donation_card_history {
+    @apply flex flex-col items-center justify-between gap-4 px-4 py-2 border border-gray-300 md:flex-row text-dark-1 rounded-2xl;
   }
 }

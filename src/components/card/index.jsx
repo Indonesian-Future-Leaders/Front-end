@@ -1,23 +1,32 @@
-import Image from "../image";
+import Background from "../background";
 import { Button } from "../button";
-import { LazyMotion, domAnimation, m } from "framer-motion";
+import { Link } from "react-router-dom";
+import ProgressBar from "../progressbar";
 
-const Card = ({ className, type, path, category, title, desc, ...props }) => {
+const CategoryLabel = ({ category }) => (
+  <h6 className="absolute top-0 right-0 p-2 text-sm font-medium bg-dark-fade text-light-1 rounded-es-lg">{category}</h6>
+);
+
+const Card = ({ className, id, type, path, category, title, description, donation_collected, ...props }) => {
   return (
-    <LazyMotion features={domAnimation}>
-      <m.article className={`${className ?? ""} card`} {...props}>
-        <Image src={path} className="w-full md:max-w-xs overflow-hidden rounded-sm min-h-300">
-          {type === "blog" && <h6 className="absolute top-0 right-0 p-2 text-sm font-medium bg-dark-fade text-light-1 rounded-es-lg">{category}</h6>}
-        </Image>
-        <h2 className="text-xl font-semibold text-primary-1">{title}</h2>
-        <p className="leading-snug">{desc}</p>
-        {type === "blog" ? null : (
-          <Button intent="outline" size="small" className="px-4 rounded-full mx-auto">
+    <article className={`${className ?? ""} card`} {...props}>
+      <Background src={path} className="w-full overflow-hidden rounded-sm md:max-w-xs min-h-300">
+        {type === "blog" && <CategoryLabel category={category} />}
+      </Background>
+      {type !== "blog" && <p className="text-xs font-bold">{category}</p>}
+      <Link className="cursor-pointer" aria-label="navigate" to={type === "blog" ? `/blog/${id}` : `/donate/${id}`}>
+        <h1 className="text-lg font-semibold text-primary-1 line-clamp-2">{title}</h1>
+      </Link>
+      {type === "blog" && <p className="leading-snug">{description}</p>}
+      {type !== "blog" && <ProgressBar target={donation_collected} />}
+      {type !== "blog" && (
+        <Link className="mx-auto cursor-pointer w-max" aria-label="navigate" to={type === "blog" ? `/blog/${id}` : `/donate/${id}`}>
+          <Button intent="outline" size="small" className="px-4 mt-2 rounded-full" ariaLabel={`donate-${category}`}>
             Donate Now
           </Button>
-        )}
-      </m.article>
-    </LazyMotion>
+        </Link>
+      )}
+    </article>
   );
 };
 

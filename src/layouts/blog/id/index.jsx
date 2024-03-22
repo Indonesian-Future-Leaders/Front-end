@@ -1,12 +1,16 @@
 import Container from "../../../components/container";
 import Image from "../../../components/image";
-import formatDate from "../../../utils/formatDate";
+import { formatDate } from "../../../utils/formatDate";
 
 const SingleBlog = ({ id, heading, author, image, description, topic, conclusion, date }) => {
   return (
     <section key={id}>
       <Container className="!my-0 !mt-16">
+<<<<<<< HEAD
         <Image src={image} className="min-h-300 sm:min-h-500 md:min-h-600" />
+=======
+        <Image src={image} className="w-full" description={heading} />
+>>>>>>> 7b9098b190604f11c817c013f31a26b42235d565
       </Container>
       <Container className="max-w-container-2 text-dark-1 leading-loose !mt-4">
         <div className="pb-4 mb-4 space-y-6 tracking-wide border-b-4 border-b-gray-200">
@@ -29,7 +33,11 @@ const SingleBlog = ({ id, heading, author, image, description, topic, conclusion
               <h1 className="text-2xl font-bold tracking-wide">{subheading}</h1>
               <div className={`flex gap-4 md:flex-row flex-col-reverse ${index % 2 !== 0 && "flex-col md:flex-row-reverse"}`}>
                 <p className="flex-1">{description[0]}</p>
+<<<<<<< HEAD
                 <Image src={image} className="flex-1 w-full max-w-full md:max-w-sm min-h-200 md:min-h-fit" />
+=======
+                <Image src={image} className="flex-1 w-full md:w-96" description={subheading} />
+>>>>>>> 7b9098b190604f11c817c013f31a26b42235d565
               </div>
               <p>{descSlice}</p>
             </div>
