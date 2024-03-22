@@ -6,11 +6,7 @@ const SingleBlog = ({ id, heading, author, image, description, topic, conclusion
   return (
     <section key={id}>
       <Container className="!my-0 !mt-16">
-<<<<<<< HEAD
-        <Image src={image} className="min-h-300 sm:min-h-500 md:min-h-600" />
-=======
         <Image src={image} className="w-full" description={heading} />
->>>>>>> 7b9098b190604f11c817c013f31a26b42235d565
       </Container>
       <Container className="max-w-container-2 text-dark-1 leading-loose !mt-4">
         <div className="pb-4 mb-4 space-y-6 tracking-wide border-b-4 border-b-gray-200">
