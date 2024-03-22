@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { LazyMotion, domAnimation, m } from "framer-motion";
 
 const Image = ({ className, src, children, ...props }) => {
@@ -19,10 +18,5 @@ const Image = ({ className, src, children, ...props }) => {
     </LazyMotion>
   );
 };
-=======
-const Image = ({ className, src, description, ...props }) => (
-  <img loading="lazy" src={src} alt={`image ${description}`} className={`${className ?? ""} transition-all duration-300`} {...props} />
-);
->>>>>>> 7b9098b190604f11c817c013f31a26b42235d565
 
 export default Image;
